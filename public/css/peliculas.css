@@ -1,0 +1,32 @@
+.peliculas {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, 200px);
+  place-content: center;
+}
+.peliculas__article {
+  background-color: #162730;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5em;
+}
+.peliculas__article__img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+.peliculas__article__button {
+  padding: 1em;
+  border: none;
+  background-color: #1c97c5;
+}
+.peliculas__article__button:hover {
+  background-color: #2083aa;
+}
+.peliculas__article__button:active {
+  background-color: #216f90;
+}
+
+/*# sourceMappingURL=peliculas.css.map */

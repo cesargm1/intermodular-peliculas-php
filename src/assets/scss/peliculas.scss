@@ -1,0 +1,35 @@
+@use "./variables";
+
+.peliculas {
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(auto-fit, 200px);
+	place-content: center;
+
+	&__article {
+		background-color: variables.$color-bg-card;
+		color: variables.$color-text-primary;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0.5em;
+
+		&__img {
+			width: 100%;
+			aspect-ratio: 1/1;
+			object-fit: contain;
+		}
+		&__button {
+			padding: 1em;
+			border: none;
+			background-color: variables.$color-button-primary;
+
+			&:hover {
+				background-color: variables.$color-button-hover;
+			}
+			&:active {
+				background-color: variables.$color-button-active;
+			}
+		}
+	}
+}

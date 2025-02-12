@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Crear productos</title>
+		<link rel="stylesheet" href="/css/panel.css" />
+	</head>
+	<body class="body">
+		<h1 class="body__h1">Crear productos</h1>
+
+		<section>
+			<form
+				action="/panel/crear_pelicula.php"
+				method="post"
+				enctype="multipart/form-data"
+			>
+				<label>
+					Nombre
+					<input type="text" name="nombre" required />
+				</label>
+
+				<label
+					>descripcion
+					<textarea
+						placeholder="descripcion"
+						name="descripcion"
+						required
+					></textarea>
+				</label>
+
+				<label>
+					Precio
+					<input type="number" name="precio" required />
+				</label>
+
+				<label>
+					Imagen
+					<input
+						type="file"
+						accept="image/png, image/jpeg, image/webp"
+						name="imagen"
+						required
+					/>
+				</label>
+				<button type="submit">Insertar pelicula</button>
+			</form>
+		</section>
+	</body>
+</html>

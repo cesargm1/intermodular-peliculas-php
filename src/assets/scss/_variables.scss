@@ -1,0 +1,38 @@
+// 🎬 Fondos (Backgrounds) - Estilo cine
+$color-bg-main: #000000; // Fondo principal (oscuro, cine)
+$color-bg-secondary: #0f171b; // Fondo secundario (secciones, overlays)
+$color-bg-card: #162730; // Fondo de tarjetas de películas
+$color-bg-highlight: #1b3846; // Fondo para secciones destacadas
+$color-bg-soft: #1e4a5e; // Fondos suaves para contraste
+
+// 🎟️ Texto (Typography) - Para títulos, descripciones y detalles
+$color-text-primary: #ffffff; // Texto principal (títulos, importante)
+$color-text-secondary: #d0e4f1; // Texto secundario (descripción de películas)
+$color-text-muted: #6cb0d4; // Texto menos importante (categorías, detalles)
+$color-text-highlight: #1c97c5; // Texto destacado (géneros, calificaciones)
+
+// 🍿 Botones y Elementos Interactivos (Buttons, Links)
+$color-button-primary: #1c97c5; // Botón principal (ej. "Ver ahora")
+$color-button-hover: #2083aa; // Hover de botón principal
+$color-button-active: #216f90; // Botón activo o seleccionado
+$color-button-secondary: #4ca4cc; // Botón secundario (ej. "Ver tráiler")
+
+// 🎛️ Bordes, Sombras y Detalles (Borders, Shadows)
+$color-border-light: #6cb0d4; // Bordes suaves
+$color-border-dark: #205c76; // Bordes más oscuros para separar secciones
+$color-shadow: #1e4a5e; // Sombras para tarjetas y efectos visuales
+
+// ⚠ Notificaciones y Resaltados (Alerts, Highlights)
+$color-alert-bg: #b8d7e9; // Fondo para mensajes informativos
+$color-alert-text: #87bddb; // Texto de alertas o avisos (ej. "Próximamente")
+
+// 📌 Menú de Navegación y Pie de Página (Navbar & Footer)
+$color-navbar-bg: #162730; // Fondo del menú de navegación
+$color-navbar-text: #ffffff; // Texto del menú (links principales)
+$color-navbar-hover: #1c97c5; // Hover de los enlaces del menú
+$color-navbar-active: #2083aa; // Estado activo del enlace en el menú
+
+$color-footer-bg: #0f171b; // Fondo del pie de página (más oscuro)
+$color-footer-text: #87bddb; // Texto del pie de página (suave pero legible)
+$color-footer-link: #6cb0d4; // Links en el pie de página
+$color-footer-link-hover: #1c97c5; // Hover de los links en el pie de página
