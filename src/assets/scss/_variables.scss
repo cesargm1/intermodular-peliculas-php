@@ -5,6 +5,9 @@ $color-bg-card: #162730; // Fondo de tarjetas de películas
 $color-bg-highlight: #1b3846; // Fondo para secciones destacadas
 $color-bg-soft: #1e4a5e; // Fondos suaves para contraste
 
+// Color base para textos generales (títulos, descripciones)
+$color-text-general: #d0e4f1; 
+
 // 🎟️ Texto (Typography) - Para títulos, descripciones y detalles
 $color-text-primary: #ffffff; // Texto principal (títulos, importante)
 $color-text-secondary: #d0e4f1; // Texto secundario (descripción de películas)
@@ -36,3 +39,17 @@ $color-footer-bg: #0f171b; // Fondo del pie de página (más oscuro)
 $color-footer-text: #87bddb; // Texto del pie de página (suave pero legible)
 $color-footer-link: #6cb0d4; // Links en el pie de página
 $color-footer-link-hover: #1c97c5; // Hover de los links en el pie de página
+
+// 📝 Formulario (Forms)
+
+$color-form-bg: #162730; // Fondo del formulario (similar a tarjetas)
+$color-form-border: #205c76; // Bordes de los campos de entrada
+$color-form-text: #d0e4f1; // Texto dentro de los campos
+$color-form-placeholder: #6cb0d4; // Placeholder en los inputs
+$color-form-label: #ffffff; // Etiquetas de los campos
+$color-form-focus: #1c97c5; // Borde y sombra cuando el campo está en foco
+$color-form-button: #1c97c5; // Botón de enviar
+$color-form-button-hover: #2083aa; // Hover del botón
+$color-form-button-active: #216f90; // Botón activo
+$color-form-error: #b83333; // Mensajes de error
+$color-form-success: #1e8e3e; // Mensajes de éxito

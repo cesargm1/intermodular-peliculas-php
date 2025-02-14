@@ -1,4 +1,4 @@
-DROP DATABASE peliculasIntermodular;
+DROP DATABASE IF EXISTS peliculasIntermodular;
 CREATE DATABASE peliculasIntermodular;
 
 USE peliculasIntermodular;

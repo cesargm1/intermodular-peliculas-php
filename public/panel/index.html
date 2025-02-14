@@ -9,34 +9,56 @@
 	<body class="body">
 		<h1 class="body__h1">Crear productos</h1>
 
-		<section>
+		<section class="body__section">
 			<form
+				class="body__section__form"
 				action="/panel/crear_pelicula.php"
 				method="post"
 				enctype="multipart/form-data"
 			>
-				<label>
-					Nombre
-					<input type="text" name="nombre" required />
-				</label>
+				<div class="body__section__form__wrap">
+					<label class="warp__label">
+						<img
+							class="body__section__form__wrap__label__img"
+							src="/svg/icon_fill_name.svg"
+							alt="svg"
+						/>
+						<input
+							class="body__section__form__input"
+							type="text"
+							name="nombre"
+							required
+						/>
+					</label>
+				</div>
 
-				<label
-					>descripcion
-					<textarea
-						placeholder="descripcion"
-						name="descripcion"
-						required
-					></textarea>
-				</label>
+				<div class="body__section__form__wrap">
+					<label class="form__label">
+						descripcion
+						<textarea
+							class="body__section__form__textarea"
+							name="descripcion"
+							required
+						></textarea>
+					</label>
+				</div>
 
-				<label>
-					Precio
-					<input type="number" name="precio" required />
-				</label>
+				<div class="body__section__form__wrap">
+					<label class="warp__label">
+						Precio
+						<input
+							class="body__section__form__input"
+							type="number"
+							name="precio"
+							required
+						/>
+					</label>
+				</div>
 
-				<label>
+				<label class="form__label">
 					Imagen
 					<input
+						class="body__section__form__input"
 						type="file"
 						accept="image/png, image/jpeg, image/webp"
 						name="imagen"

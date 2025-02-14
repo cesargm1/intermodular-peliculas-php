@@ -1,5 +1,47 @@
-body {
-  background-color: rgb(167, 202, 167);
+.body {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.body__h1 {
+  color: #d0e4f1;
+}
+.body__section {
+  min-height: 500px;
+  height: 100%;
+  width: 600px;
+  max-width: 100%;
+}
+.body__section__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  background-color: #162730;
+  padding: 1em;
+  box-shadow: #1e4a5e;
+  border-radius: 30px;
+}
+.body__section__form__wrap {
+  background-color: #ffffff;
+  padding: 1em;
+  border: 1px solid gray;
+}
+.body__section__form__wrap__label__img {
+  height: 100px;
+}
+.body__section__form__textarea {
+  border: none;
+}
+.body__section__form__textarea:focus {
+  outline: none;
+}
+.body__section__form__input {
+  border: none;
+}
+.body__section__form__input:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=panel.css.map */
