@@ -9,7 +9,7 @@ class Connection
 {
     const SERVER_NAME = 'localhost';
     const USER_NAME = 'root';
-    const USER_PASSWORD = 'root';
+    const USER_PASSWORD = '';
     const DATABASE = 'peliculasIntermodular';
     const PORT = 3306;
 
