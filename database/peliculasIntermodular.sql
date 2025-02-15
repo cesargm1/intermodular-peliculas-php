@@ -23,4 +23,7 @@ CREATE TABLE carrito_item(
     FOREIGN KEY (carrito_id) REFERENCES carrito (carrito_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (pelicula_id) REFERENCES peliculas (pelicula_id) ON DELETE CASCADE ON UPDATE CASCADE
 
-)
+);
+
+
+ALTER TABLE peliculas ADD FULLTEXT(nombre);
