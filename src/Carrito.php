@@ -25,7 +25,8 @@ class Carrito
         $stmt->execute();
 
 
-        return [];
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
 
@@ -64,7 +65,7 @@ class Carrito
         $sesion = new Session();
         $sesionId = $sesion->getId();
         $cantidad = 1;
-        $query = "INSERT INTO carrito_item (carrito_id, pelicula_id, cantidad ) VALUES (?,?,?)";
+        $query = "INSERT INTO carrito_item (carrito_id, pelicula_id, cantidad ) VALUES (?,?,?) ON DUPLICATE KEY UPDATE cantidad = cantidad + 1";
 
         $stmt = $conn->prepare($query);
         $stmt->bind_param('sdd', $sesionId, $peliculaId, $cantidad);

@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  max-width: 600px;
+  background-color: #1a2d3a;
+  border: solid 2px #205c76;
+  box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.peliculas {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "imagen nombre precio cantidad";
+  grid-template-rows: auto;
+  border-top: solid 2px black;
+  padding: 1em;
+}
+
+.peliculas:hover {
+  background-color: #205c76;
+}
+
+.cart-text {
+  color: #d0e4f1;
+}
+
+.img {
+  width: 50px;
+  max-width: 100%;
+  object-fit: cover;
+  grid-area: imagen;
+}
+
+.nombre {
+  grid-area: nombre;
+}
+
+.precio {
+  grid-area: precio;
+}
+
+.section__buy {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  background-color: #d0e4f1;
+}
+
+.cantidad {
+  grid-area: cantidad;
+}
+
+.buy {
+  background-color: #1c97c5;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.buy:hover {
+  background-color: #2083aa;
+}
+
+/*# sourceMappingURL=carrito.css.map */

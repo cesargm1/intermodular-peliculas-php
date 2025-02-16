@@ -1,0 +1,76 @@
+@use "_variables";
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.section__div {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	width: 100%;
+	max-width: 600px;
+	background-color: variables.$color-cart-bg;
+	border: solid 2px variables.$color-cart-border;
+	box-shadow: variables.$color-cart-shadow;
+}
+
+.peliculas {
+	display: grid;
+	place-items: center;
+	grid-template-areas: "imagen nombre precio cantidad";
+	grid-template-rows: auto;
+	border-top: solid 2px black;
+	padding: 1em;
+}
+
+.peliculas:hover {
+	background-color: variables.$color-cart-border;
+}
+
+.cart-text {
+	color: variables.$color-cart-text;
+}
+.img {
+	width: 50px;
+	max-width: 100%;
+	object-fit: cover;
+	grid-area: imagen;
+}
+
+.nombre {
+	grid-area: nombre;
+}
+
+.precio {
+	grid-area: precio;
+}
+
+.section__buy {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	background-color: variables.$color-cart-text;
+}
+
+.cantidad {
+	grid-area: cantidad;
+}
+
+.buy {
+	background-color: variables.$color-cart-button;
+	border: none;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.buy:hover {
+	background-color: variables.$color-cart-button-hover;
+}

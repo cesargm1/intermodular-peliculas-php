@@ -6,7 +6,7 @@ $color-bg-highlight: #1b3846; // Fondo para secciones destacadas
 $color-bg-soft: #1e4a5e; // Fondos suaves para contraste
 
 // Color base para textos generales (títulos, descripciones)
-$color-text-general: #d0e4f1; 
+$color-text-general: #d0e4f1;
 
 // 🎟️ Texto (Typography) - Para títulos, descripciones y detalles
 $color-text-primary: #ffffff; // Texto principal (títulos, importante)
@@ -53,3 +53,11 @@ $color-form-button-hover: #2083aa; // Hover del botón
 $color-form-button-active: #216f90; // Botón activo
 $color-form-error: #b83333; // Mensajes de error
 $color-form-success: #1e8e3e; // Mensajes de éxito
+
+$color-cart-bg: #1a2d3a; // Fondo del carrito (similar a las tarjetas)
+$color-cart-border: #205c76; // Bordes del carrito
+$color-cart-text: #d0e4f1; // Texto del carrito
+$color-cart-highlight: #1c97c5; // Texto destacado (precio, cantidad)
+$color-cart-button: #1c97c5; // Botón en el carrito
+$color-cart-button-hover: #2083aa; // Hover del botón
+$color-cart-shadow: rgba(0, 0, 0, 0.3); // Sombra sutil

@@ -1,4 +1,4 @@
-@use '_variables';
+@use "_variables";
 
 .body {
 	min-height: 100dvh;
@@ -6,17 +6,18 @@
 	align-items: center;
 	flex-direction: column;
 
-	&__h1{
+	&__h1 {
 		color: variables.$color-text-general;
 	}
 
-	&__section{
+	&__section {
 		min-height: 500px;
 		height: 100%;
 		width: 600px;
 		max-width: 100%;
+		min-width: 300px;
 
-		&__form{
+		&__form {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -26,35 +27,31 @@
 			box-shadow: variables.$color-shadow;
 			border-radius: 30px;
 
-			&__wrap{
+			&__wrap {
 				background-color: variables.$color-form-label;
 				padding: 1em;
 				border: 1px solid gray;
 
-				&__label__img{
-					height: 100px ;
+				&__label__img {
+					height: 100px;
 				}
 			}
 
-			&__textarea{
+			&__textarea {
 				border: none;
 			}
 
-			&__textarea:focus{
+			&__textarea:focus {
 				outline: none;
 			}
 
-			&__input{
+			&__input {
 				border: none;
 			}
 
-			&__input:focus{
+			&__input:focus {
 				outline: none;
 			}
-
-
 		}
 	}
-} 
-
-
+}

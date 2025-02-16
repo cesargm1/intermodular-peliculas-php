@@ -10,7 +10,9 @@
 	"config": {
 		"process-timeout": 36000
 	},
-	"require": {},
+	"require": {
+		"vlucas/phpdotenv": "^5.6"
+	},
 	"scripts": {
 		"sass": "sass --watch src/assets/scss:public/css",
 		"server": "php -S localhost:8000 -t public"

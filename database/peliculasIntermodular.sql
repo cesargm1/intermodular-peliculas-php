@@ -21,7 +21,8 @@ CREATE TABLE carrito_item(
     pelicula_id BIGINT UNSIGNED NOT NULL,
     cantidad INT UNSIGNED NOT NULL,
     FOREIGN KEY (carrito_id) REFERENCES carrito (carrito_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (pelicula_id) REFERENCES peliculas (pelicula_id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (pelicula_id) REFERENCES peliculas (pelicula_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    UNIQUE(carrito_id, pelicula_id)
 
 );
 
