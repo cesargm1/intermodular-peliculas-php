@@ -19,10 +19,12 @@ if (!empty($_GET['buscador'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>buscador</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/peliculas.css">
 </head>
 
 <body>
+    <?php include_once '../resources/header.php' ?>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
         <input name="buscador" type="search" value="<?php echo $_GET['buscador']   ?>">
         <button>buscar</button>

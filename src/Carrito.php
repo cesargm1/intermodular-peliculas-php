@@ -12,6 +12,28 @@ class Carrito
         $this->agregarPeliculaCarrito($peliculaId);
     }
 
+    public function quitar(int $peliculaId)
+    {
+        $conn = Connection::conn();
+        $sesion = new Session();
+        $sesionId = $sesion->getId();
+
+        $query = "UPDATE carrito_item SET cantidad = cantidad - 1  WHERE carrito_id = ? AND pelicula_id = ?";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('sd', $sesionId, $peliculaId);
+
+        $result = $stmt->execute();
+
+        $query = "DELETE FROM carrito_item WHERE cantidad = 0 AND carrito_id = ? AND pelicula_id = ? ";
+
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('sd', $sesionId, $peliculaId);
+
+        $result = $stmt->execute();
+    }
+
+
     public function peliculas(): array
     {
 
