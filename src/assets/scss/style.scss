@@ -1,12 +1,63 @@
 @use "_variables";
 
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
 header.header {
+
+	padding: 1em;
+
+	.icon{
+		width: 30px;
+		height: 30px;
+	}
+
 	ul {
 		display: flex;
-		justify-content: space-evenly;
+		align-items: center;
 
 		li {
 			list-style: none;
+			flex: 1;
+			width: 100%;
+			max-width: 600px;
+			a{
+				text-decoration: none;
+			}
+
+			form{
+			
+				.container__serch{
+					display: flex;
+					align-items: center;
+					border: 1px solid black;
+					border-radius: 25px;
+					padding: .5em;
+					width: 100%;
+					max-width: 600px;
+
+					label{
+						width: 100%;
+
+						.search{
+							border: none;
+							width: 100%;
+						}
+
+						.search:focus{
+							outline: none;
+						}
+					}
+				}
+			}
+
+			.container__icon{
+				display: flex;
+				justify-content: center;
+			}
 		}
+
 	}
 }
