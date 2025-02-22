@@ -19,7 +19,7 @@ $telefono = $_POST['telefono'] ?? '';
 <body>
     <main class="main">
         <section class="main__section">
-            <form class="form" action="panel/crear_usuario.php" method="post">
+            <form class="form" action="/comprar.php" method="post">
                 <h1 class="h1">Registro de usuarios</h1>
                 <div class="input__container">
                     <label>

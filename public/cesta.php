@@ -64,15 +64,15 @@ $peliculas = $carrito->peliculas();
             <?php } ?>
 
             <hr>
-            <section class="section_buy">
+            <section class="section__buy">
                 <?php
                 if (count($peliculas) === 0) {
                     echo "<p>Cesta vacia</p>";
                 } else {
                 ?>
-                    <button class="buy">comprar</button>
+                    <a class="buy" href="login.php">comprar</a>
                 <?php } ?>
-                <p>Total: <?php echo $total ?>€ </p>
+                <span>Total: <?php echo $total ?>€ </span>
 
             </section>
 

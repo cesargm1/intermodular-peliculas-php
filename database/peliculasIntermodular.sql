@@ -11,10 +11,6 @@ descripcion TEXT,
 imagen MEDIUMBLOB
 );
 
-CREATE TABLE carrito (
-    carrito_id VARCHAR(255) NOT NULL PRIMARY KEY
-);
-
 CREATE TABLE carrito_item(
     carrito_item_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     carrito_id  VARCHAR(255) NOT NULL,
@@ -32,6 +28,12 @@ CREATE TABLE usuarios (
     email VARCHAR(255) NOT NULL UNIQUE,
     direccion_envio VARCHAR(255),
     telefono char(12)
+);
+
+CREATE TABLE carrito (
+    carrito_id VARCHAR(255) NOT NULL PRIMARY KEY,
+    usuario_id BIGINT UNSIGNED,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id) ON DELETE CASCADE
 );
 
 

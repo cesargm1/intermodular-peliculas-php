@@ -64,6 +64,17 @@ class Carrito
         return $stmt->fetch();
     }
 
+    public function asociarUsuario(int $usuarioId)
+    {
+        $conn = Connection::conn();
+        $sesion = new Session();
+        $sesionId =  $sesion->getId();
+        $query  = "update carrito set usuario_id= ? WHERE carrito_id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('is', $usuarioId, $sesionId);
+        return $stmt->execute();
+    }
+
 
     private function crearCarrito()
     {

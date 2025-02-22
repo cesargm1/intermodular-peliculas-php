@@ -1,10 +1,12 @@
 <?php
 
+use App\Carrito;
 use App\CrearUsuario;
+use App\Session;
 use App\Validator;
 use App\ValidatorException;
 
-include_once '../../vendor/autoload.php';
+include_once '../vendor/autoload.php';
 
 $nombre = $_POST['nombre'] ?? '';
 $correo = $_POST['correo'] ?? '';
@@ -17,7 +19,7 @@ try {
     $validatorName->require();
 
     $validatorCorreo = new Validator($correo, "Nombre de correo electronico");
-    $validatorCorreo->require();
+    $validatorCorreo->require()->email();
 
     $validatorDireccion = new Validator($direccion, "Direccion del usuario");
     $validatorDireccion->require();
@@ -28,10 +30,10 @@ try {
     die($exception->getMessage());
 }
 
-$creado = CrearUsuario::crear($nombre, $correo, $direccion, $telefono);
+$usuarioId = CrearUsuario::crear($nombre, $correo, $direccion, $telefono);
+$carrito = new Carrito();
+$carrito->asociarUsuario($usuarioId);
+$session = new Session();
+$session->regenerateId();
 
-if ($creado) {
-    echo "El usuario se creo correctamente";
-} else {
-    echo "El usuario no pudo crearse";
-}
+echo "Tu compra fue realizada correctamente";

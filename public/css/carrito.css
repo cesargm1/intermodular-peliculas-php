@@ -58,8 +58,7 @@
 .section__buy {
   display: flex;
   align-items: center;
-  gap: 1em;
-  background-color: #d0e4f1;
+  gap: 2em;
 }
 
 .cantidad__buttons {

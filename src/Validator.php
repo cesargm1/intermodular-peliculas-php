@@ -31,4 +31,13 @@ class Validator
         }
         return $this;
     }
+
+    public function email(): self
+    {
+        if (! filter_var($this->value, FILTER_VALIDATE_EMAIL)) {
+            throw new ValidatorException("El campo {$this->field} tiene que ser un email valido");
+        }
+
+        return $this;
+    }
 }

@@ -16,4 +16,9 @@ class Session
     {
         return session_id();
     }
+
+    public function regenerateId(): bool
+    {
+        return session_regenerate_id(true);
+    }
 }
