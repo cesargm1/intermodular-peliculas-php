@@ -8,14 +8,23 @@
   background-color: #162730;
   color: #ffffff;
   display: flex;
+  gap: 0.5em;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5em;
+  padding: 1em;
 }
 .peliculas__article__img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: contain;
+}
+.peliculas__article .parrafo {
+  flex: 1;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .peliculas__article__button {
   padding: 1em;

@@ -5,14 +5,14 @@ namespace App;
 
 class CrearPelicula
 {
-    public static function crear($nombre, $descripcion, $precio, $imagen): bool
+    public static function crear($nombre, $descripcion, $precio, $genero, $imagen): bool
     {
         $conn = Connection::conn();
-        $query = "INSERT INTO peliculas (nombre, descripcion, precio, imagen) VALUES (?, ?, ?,?)";
+        $query = "INSERT INTO peliculas (nombre, descripcion, precio, genero, imagen) VALUES (?,?, ?,?,?)";
 
         $stmt = $conn->prepare($query);
         $imageHex = base64_encode($imagen);
-        $stmt->bind_param('ssds', $nombre, $descripcion, $precio, $imageHex);
+        $stmt->bind_param('ssdss', $nombre, $descripcion, $precio, $genero, $imageHex);
 
         return $stmt->execute();
     }

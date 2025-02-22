@@ -15,7 +15,7 @@
                         </label>
 
                         <div class="container__icon">
-                            <a href="/buscador.php"><img src="/svg/nav/glass.svg" alt="glass" class="icon"></a>
+                            <button class="button--icon" type="submit"> <img src="/svg/nav/glass.svg" alt="glass" class="icon"></a></button>
                         </div>
                     </div>
 

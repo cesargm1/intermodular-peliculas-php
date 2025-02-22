@@ -9,7 +9,8 @@ include_once '../../vendor/autoload.php';
 $nombre = $_POST['nombre'] ?? '';
 $descripcion = $_POST['descripcion'] ?? '';
 $precio = $_POST['precio'] ?? '';
-$imagen = $_FILES['imagen'];
+$genero = $_POST['genero'] ?? '';
+$imagen = $_FILES['imagen'] ?? '';
 
 
 try {
@@ -22,6 +23,9 @@ try {
     $validatorPrecio = new Validator($precio, "Precio del producto");
     $validatorPrecio->require()->min(0);
 
+    $validatorGenero = new Validator($genero, "Genero de la pelicula");
+    $validatorGenero->require();
+
     $validatorImagen = new Validator($imagen['tmp_name'], "imagen del producto");
     $validatorImagen->require();
 } catch (ValidatorException $exception) {
@@ -30,7 +34,7 @@ try {
 
 $imagenContent = file_get_contents($imagen['tmp_name']);
 
-$creada = CrearPelicula::crear($nombre, $descripcion, $precio, $imagenContent);
+$creada = CrearPelicula::crear($nombre, $descripcion, $precio, $genero, $imagenContent);
 
 if ($creada) {
     echo 'La pelicula se creo correctamente';

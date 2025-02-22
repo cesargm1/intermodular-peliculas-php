@@ -53,5 +53,8 @@ header.header nav ul li .container__icon {
   display: flex;
   justify-content: center;
 }
+header.header nav ul li .container__icon .button--icon {
+  border: none;
+}
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=header.css.map */

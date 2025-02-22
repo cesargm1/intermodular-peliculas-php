@@ -15,7 +15,7 @@ $peliculas = ObtenerPeliculas::get();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/peliculas.css">
 </head>
 
@@ -38,7 +38,7 @@ $peliculas = ObtenerPeliculas::get();
                     <img class="peliculas__article__img" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
                     <h2><?php echo $nombre ?></h2>
                     <span><?php echo $precio ?> €</span>
-                    <p><?php echo $descripcion ?></p>
+                    <p class="parrafo"><?php echo $descripcion ?></p>
 
                     <a class="peliculas__article__button" href="cesta.php?peliculaId=<?php echo $peliculaId ?> ">Comprar</a>
                 </article>

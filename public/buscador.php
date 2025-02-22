@@ -20,25 +20,22 @@ if (!empty($buscador)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>buscador</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/peliculas.css">
 </head>
 
 <body>
     <?php include_once '../resources/header.php' ?>
-    <h1>Peliculas</h1>
-
     <?php
     if (!empty($buscador)) {
     ?>
         <section class="peliculas">
-
-
             <?php foreach ($peliculas as $pelicula) {
                 $peliculaId = $pelicula['pelicula_id'];
                 $nombre = $pelicula['nombre'];
                 $precio = $pelicula['precio'];
                 $descripcion = $pelicula['descripcion'];
+                $genero = $pelicula['genero'];
                 $imagen = $pelicula['imagen'];
             ?>
 
@@ -46,7 +43,8 @@ if (!empty($buscador)) {
                     <img class="peliculas__article__img" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
                     <h2><?php echo $nombre ?></h2>
                     <span><?php echo $precio ?> €</span>
-                    <p><?php echo $descripcion ?></p>
+                    <p class="parrafo"><?php echo $descripcion ?></p>
+                    <p><?php echo $genero ?></p>
 
                     <a class="peliculas__article__button" href="cesta.php?peliculaId=<?php echo $peliculaId ?> ">Comprar</a>
                 </article>
