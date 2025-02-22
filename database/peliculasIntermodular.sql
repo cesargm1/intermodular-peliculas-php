@@ -26,5 +26,13 @@ CREATE TABLE carrito_item(
 
 );
 
+CREATE TABLE usuarios (
+    usuario_id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    direccion_envio VARCHAR(255),
+    telefono char(12)
+);
+
 
 ALTER TABLE peliculas ADD FULLTEXT(nombre);

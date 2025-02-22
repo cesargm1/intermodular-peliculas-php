@@ -1,17 +1,26 @@
+<?php
+$nombre = $_POST['nombre'] ?? '';
+$correo = $_POST['correo'] ?? '';
+$direccion = $_POST['direccion'] ?? '';
+$telefono = $_POST['telefono'] ?? '';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de registro</title>
     <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
     <main class="main">
         <section class="main__section">
-            <form class="form" action="login.php" method="post">
+            <form class="form" action="panel/crear_usuario.php" method="post">
+                <h1 class="h1">Registro de usuarios</h1>
                 <div class="input__container">
                     <label>
                         <div class="icon__container">
@@ -59,7 +68,7 @@
                     </label>
                 </div>
 
-                <button type="submit">Registrar usuario</button>
+                <button class="button" type="submit">Registrar usuario</button>
             </form>
         </section>
     </main>

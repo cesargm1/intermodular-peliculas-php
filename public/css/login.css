@@ -26,18 +26,20 @@ body {
   max-width: 600px;
   width: 100%;
   padding: 1em;
-  background: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.55);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 10px;
 }
+.main__section .form h1 {
+  text-align: center;
+}
 .main__section .form .input__container {
   display: flex;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   width: 100%;
   max-width: 600px;
-  border-radius: 10px;
 }
 .main__section .form .input__container label {
   display: flex;
@@ -62,6 +64,12 @@ body {
 .main__section .form .input__container label .icon__container .img__icon {
   width: 100%;
   height: 100%;
+}
+.main__section .form .button {
+  padding: 1em;
+  background-color: #1c97c5;
+  border: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=login.css.map */
