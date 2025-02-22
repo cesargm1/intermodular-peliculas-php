@@ -3,11 +3,12 @@
 use App\ObtenerPeliculas;
 
 
+$buscador = $_GET['buscador'] ?? '';
 
-if (!empty($_GET['buscador'])) {
+if (!empty($buscador)) {
     include_once '../vendor/autoload.php';
 
-    $peliculas = ObtenerPeliculas::serchPeliculas($_GET['buscador']);
+    $peliculas = ObtenerPeliculas::serchPeliculas($buscador);
 }
 
 ?>
@@ -25,14 +26,10 @@ if (!empty($_GET['buscador'])) {
 
 <body>
     <?php include_once '../resources/header.php' ?>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">
-        <input name="buscador" type="search" value="<?php echo $_GET['buscador']   ?>">
-        <button>buscar</button>
-    </form>
     <h1>Peliculas</h1>
 
     <?php
-    if (!empty($_GET['buscador'])) {
+    if (!empty($buscador)) {
     ?>
         <section class="peliculas">
 

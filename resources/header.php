@@ -3,7 +3,7 @@
         <ul>
             <li>
                 <div class="container__icon">
-                    <a href="/index.php"><img src="/svg/cart.svg" alt="home" class="icon"></a>
+                    <a href="/index.php"><img src="/svg/nav/home.svg" alt="home" class="icon"></a>
                 </div>
             </li>
 
@@ -15,7 +15,7 @@
                         </label>
 
                         <div class="container__icon">
-                            <a href="/buscador.php"><img src="/svg/glass.svg" alt="glass" class="icon"></a>
+                            <a href="/buscador.php"><img src="/svg/nav/glass.svg" alt="glass" class="icon"></a>
                         </div>
                     </div>
 
@@ -24,7 +24,7 @@
 
             <li class="cart">
                 <div class="container__icon">
-                    <a href="/cesta.php"><img src="/svg/cart.svg" alt="glass" class="icon"></a>
+                    <a href="/cesta.php"><img src="/svg/nav/cart.svg" alt="glass" class="icon"></a>
                 </div>
             </li>
         </ul>

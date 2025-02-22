@@ -6,25 +6,31 @@
 
 header.header {
   padding: 1em;
+  display: flex;
+  justify-content: center;
 }
-header.header .icon {
+header.header nav {
+  flex: 1;
+}
+header.header nav .icon {
   width: 30px;
   height: 30px;
 }
-header.header ul {
+header.header nav ul {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-header.header ul li {
+header.header nav ul li {
   list-style: none;
   flex: 1;
   width: 100%;
   max-width: 600px;
 }
-header.header ul li a {
+header.header nav ul li a {
   text-decoration: none;
 }
-header.header ul li form .container__serch {
+header.header nav ul li form .container__serch {
   display: flex;
   align-items: center;
   border: 1px solid black;
@@ -33,17 +39,17 @@ header.header ul li form .container__serch {
   width: 100%;
   max-width: 600px;
 }
-header.header ul li form .container__serch label {
+header.header nav ul li form .container__serch label {
   width: 100%;
 }
-header.header ul li form .container__serch label .search {
+header.header nav ul li form .container__serch label .search {
   border: none;
   width: 100%;
 }
-header.header ul li form .container__serch label .search:focus {
+header.header nav ul li form .container__serch label .search:focus {
   outline: none;
 }
-header.header ul li .container__icon {
+header.header nav ul li .container__icon {
   display: flex;
   justify-content: center;
 }
