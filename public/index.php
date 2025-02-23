@@ -16,6 +16,7 @@ $peliculas = ObtenerPeliculas::get();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/filters.css">
     <link rel="stylesheet" href="/css/peliculas.css">
     <link rel="stylesheet" href="/css/footer.css">
 
@@ -23,6 +24,7 @@ $peliculas = ObtenerPeliculas::get();
 
 <body>
     <?php include_once '../resources/header.php' ?>
+    <?php include_once "../resources/filter.php" ?>
     <main class="main">
         <section class="peliculas">
 
@@ -50,7 +52,6 @@ $peliculas = ObtenerPeliculas::get();
         </section>
     </main>
     <?php include_once '../resources/footer.php' ?>
-
 </body>
 
 </html>

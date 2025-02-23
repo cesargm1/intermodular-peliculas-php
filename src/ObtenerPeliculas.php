@@ -13,28 +13,51 @@ class ObtenerPeliculas
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public static function serchPeliculas(string $buscador): array
+    public static function searchPeliculas(string $buscador, array $generos): array
     {
         $conn = Connection::conn();
 
+        $query = "SELECT * FROM peliculas";
+
+        $wheres = [];
+
         if ($buscador != '') {
-            //CUENTA EL NUMERO DE PALABRAS
+            // CUENTA EL NUMERO DE PALABRAS
             $trozos = explode(" ", $buscador);
             $numero = count($trozos);
             if ($numero == 1) {
 
-                //SI SOLO HAY UNA PALABRA DE BUSQUEDA SE ESTABLECE UNA INSTRUCION CON LIKE
-                $cadbusca = "SELECT * FROM peliculas WHERE  /*VISIBLE =1 AND*/ nombre LIKE '%$buscador%' LIMIT 10";
+                // SI SOLO HAY UNA PALABRA DE BUSQUEDA SE ESTABLECE UNA INSTRUCION CON LIKE
+                $wheres[] = "nombre LIKE '%$buscador%'";
             } elseif ($numero > 1) {
                 //SI HAY UNA FRASE SE UTILIZA EL ALGORTIMO DE BUSQUEDA AVANZADO DE MATCH AGAINST
-                //busqueda de frases con mas de una palabra y un algoritmo especializado
-                $cadbusca = "SELECT * FROM peliculas WHERE MATCH (nombre) AGAINST  ('%$buscador%')";
+                // busqueda de frases con mas de una palabra y un algoritmo especializado
+                $wheres[] = "MATCH (nombre) AGAINST  ('%$buscador%')";
             }
-
-            $result =  $conn->query($cadbusca);
-            return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        return [];
+        if ($generos) {
+            $generosString =  "'" . implode("','", $generos) . "'";
+
+            $wheres[] = "genero IN (" . $generosString . ")";
+        }
+
+        if ($wheres) {
+            $wheresStr = implode(' AND ', $wheres);
+
+            $query = $query . " WHERE " . $wheresStr;
+        }
+
+        $result =  $conn->query($query . " LIMIT 10");
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public static function generos(): array
+    {
+        $conn = Connection::conn();
+        $query = "SELECT genero, COUNT(*) n FROM peliculas GROUP BY genero ";
+        $result = $conn->query($query);
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 }

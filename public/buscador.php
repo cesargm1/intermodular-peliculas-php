@@ -2,14 +2,12 @@
 
 use App\ObtenerPeliculas;
 
+include_once '../vendor/autoload.php';
 
 $buscador = $_GET['buscador'] ?? '';
+$generos = $_GET['genero'] ?? [];
 
-if (!empty($buscador)) {
-    include_once '../vendor/autoload.php';
-
-    $peliculas = ObtenerPeliculas::serchPeliculas($buscador);
-}
+$peliculas = ObtenerPeliculas::searchPeliculas($buscador, $generos);
 
 ?>
 
@@ -26,11 +24,17 @@ if (!empty($buscador)) {
 </head>
 
 <body>
+
+
     <?php include_once '../resources/header.php' ?>
 
     <main class="main">
+        <div class="filters">
+            <?php include_once '../resources/filter.php' ?>
+        </div>
+
         <?php
-        if (!empty($buscador)) {
+        if ($peliculas) {
         ?>
             <section class="peliculas">
                 <?php foreach ($peliculas as $pelicula) {
@@ -58,7 +62,7 @@ if (!empty($buscador)) {
             </section>
         <?php
         } else {
-            echo "<p class='error'>Por favor busca una pelicula !gilipollas¡</p>";
+            echo "<p class='error'>No existen peliculas para este filtro</p>";
         }
         ?>
     </main>
