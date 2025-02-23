@@ -8,6 +8,9 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  display: grid;
+  grid-template-areas: "filter main main" "filter main main";
+  grid-template-columns: 150px 1fr;
 }
 .main .error {
   text-align: center;
@@ -17,6 +20,7 @@ body {
   gap: 1em;
   grid-template-columns: repeat(auto-fit, 200px);
   place-content: center;
+  grid-area: main;
 }
 .main .peliculas__article {
   background-color: #162730;

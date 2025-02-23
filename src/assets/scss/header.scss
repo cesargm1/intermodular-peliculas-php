@@ -9,6 +9,8 @@ header.header {
 	padding: 1em;
 	display: flex;
 	justify-content: center;
+	grid-area: header;
+	min-width: 100%;
 
 	nav {
 		flex: 1;

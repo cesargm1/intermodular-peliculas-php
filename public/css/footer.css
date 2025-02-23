@@ -3,6 +3,7 @@
   justify-content: center;
   width: 100%;
   background-color: black;
+  grid-area: footer;
 }
 .footer ul {
   display: flex;

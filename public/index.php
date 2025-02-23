@@ -14,6 +14,7 @@ $peliculas = ObtenerPeliculas::get();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/filters.css">
@@ -24,8 +25,8 @@ $peliculas = ObtenerPeliculas::get();
 
 <body>
     <?php include_once '../resources/header.php' ?>
-    <?php include_once "../resources/filter.php" ?>
     <main class="main">
+        <?php include_once "../resources/filter.php" ?>
         <section class="peliculas">
 
 

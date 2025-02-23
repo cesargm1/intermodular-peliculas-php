@@ -3,7 +3,7 @@
         <ul>
             <li>
                 <div class="container__icon">
-                    <a href="/index.php"><img src="/svg/nav/home.svg" alt="home" class="icon"></a>
+                    <a href="/index.php"><img src="/svg/logo.svg" alt="logo" class="icon"></a>
                 </div>
             </li>
 

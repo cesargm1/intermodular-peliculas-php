@@ -1,6 +1,7 @@
 .filters {
   display: flex;
   flex-direction: column;
+  grid-area: filter;
 }
 
 /*# sourceMappingURL=filters.css.map */
