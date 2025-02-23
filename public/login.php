@@ -14,6 +14,7 @@ $telefono = $_POST['telefono'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de registro</title>
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
@@ -72,6 +73,7 @@ $telefono = $_POST['telefono'] ?? '';
             </form>
         </section>
     </main>
+    <?php include_once '../resources/footer.php' ?>
 </body>
 
 </html>

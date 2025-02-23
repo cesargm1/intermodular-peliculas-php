@@ -17,11 +17,12 @@ $peliculas = ObtenerPeliculas::get();
     <title>Document</title>
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/peliculas.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
 </head>
 
 <body>
     <?php include_once '../resources/header.php' ?>
-    <header class="header"></header>
     <main class="main">
         <section class="peliculas">
 
@@ -48,7 +49,8 @@ $peliculas = ObtenerPeliculas::get();
 
         </section>
     </main>
-    <footer class="footer"></footer>
+    <?php include_once '../resources/footer.php' ?>
+
 </body>
 
 </html>

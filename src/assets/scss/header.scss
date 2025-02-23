@@ -59,8 +59,10 @@ header.header {
 				.container__icon {
 					display: flex;
 					justify-content: center;
+
 					.button--icon {
 						border: none;
+						background-color: transparent;
 					}
 				}
 			}

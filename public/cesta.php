@@ -32,11 +32,12 @@ $peliculas = $carrito->peliculas();
     <title>cesta</title>
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
     <?php include_once '../resources/header.php' ?>
-    <section class="container">
+    <main class="container">
         <p>cesta</h2>
         <div class="section__div">
             <?php
@@ -77,7 +78,8 @@ $peliculas = $carrito->peliculas();
             </section>
 
         </div>
-    </section>
+    </main>
+    <?php include_once '../resources/footer.php' ?>
 </body>
 
 </html>

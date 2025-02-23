@@ -55,6 +55,7 @@ header.header nav ul li .container__icon {
 }
 header.header nav ul li .container__icon .button--icon {
   border: none;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=header.css.map */

@@ -1,44 +1,61 @@
 @use "./variables";
 
-.peliculas {
-	display: grid;
-	gap: 1em;
-	grid-template-columns: repeat(auto-fit, 200px);
-	place-content: center;
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+}
 
-	&__article {
-		background-color: variables.$color-bg-card;
-		color: variables.$color-text-primary;
-		display: flex;
-		gap: 0.5em;
-		flex-direction: column;
-		justify-content: center;
-		padding: 1em;
+.main {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	.error {
+		text-align: center;
+	}
+	.peliculas {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: repeat(auto-fit, 200px);
+		place-content: center;
 
-		&__img {
-			width: 100%;
-			aspect-ratio: 1/1;
-			object-fit: contain;
-		}
-
-		.parrafo {
-			flex: 1;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-line-clamp: 6;
-			-webkit-box-orient: vertical;
-			overflow: hidden;
-		}
-		&__button {
+		&__article {
+			background-color: variables.$color-bg-card;
+			color: variables.$color-text-primary;
+			display: flex;
+			gap: 0.5em;
+			flex-direction: column;
+			justify-content: center;
 			padding: 1em;
-			border: none;
-			background-color: variables.$color-button-primary;
 
-			&:hover {
-				background-color: variables.$color-button-hover;
+			&__img {
+				width: 100%;
+				aspect-ratio: 1/1;
+				object-fit: contain;
 			}
-			&:active {
-				background-color: variables.$color-button-active;
+
+			.parrafo {
+				flex: 1;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 6;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+			&__button {
+				padding: 1em;
+				border: none;
+				background-color: variables.$color-button-primary;
+				text-align: center;
+				text-decoration: none;
+				color: black;
+
+				&:hover {
+					background-color: variables.$color-button-hover;
+				}
+				&:active {
+					background-color: variables.$color-button-active;
+				}
 			}
 		}
 	}

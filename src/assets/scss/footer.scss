@@ -1,0 +1,23 @@
+@use "_variables";
+
+.footer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: black;
+
+	ul {
+		display: flex;
+		justify-content: center;
+		gap: 2em;
+		padding: 1em;
+		list-style: none;
+		li {
+			list-style: none;
+			a {
+				text-decoration: none;
+				color: white;
+			}
+		}
+	}
+}
