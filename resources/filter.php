@@ -10,21 +10,25 @@ $generos = ObtenerPeliculas::generos();
 
 <form class="filters" action="/buscador.php" method="get">
 
-    <?php
+    <div class="filters__container">
+        <h2>Generos</h2>
+        <?php
 
-    foreach ($generos as $genero) {
-        $name = $genero['genero'];
-        $count = $genero['n'];
+        foreach ($generos as $genero) {
+            $name = $genero['genero'];
+            $count = $genero['n'];
 
-    ?>
-        <label>
+        ?>
+            <label>
 
-            <input type="checkbox" name="genero[]" value="<?php echo $name ?>">
-            <?php echo $name . ' (' . $count . ')' ?>
-        </label>
+                <input type="checkbox" name="genero[]" value="<?php echo $name ?>">
+                <?php echo $name . ' (' . $count . ')' ?>
+            </label>
 
-    <?php } ?>
+        <?php } ?>
 
-    <button class="filter" type="submit">Filtrar</button>
+        <button class="filter" type="submit">Filtrar</button>
+
+    </div>
 
 </form>

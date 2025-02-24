@@ -3,5 +3,18 @@
   flex-direction: column;
   grid-area: filter;
 }
+.filters__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background-color: #1c97c5;
+}
+.filters__container .filter {
+  padding: 1em;
+  border: none;
+  background-color: black;
+  color: white;
+}
 
 /*# sourceMappingURL=filters.css.map */

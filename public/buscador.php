@@ -20,6 +20,7 @@ $peliculas = ObtenerPeliculas::searchPeliculas($buscador, $generos);
     <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
     <title>buscador</title>
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/filters.css">
     <link rel="stylesheet" href="/css/peliculas.css">
     <link rel="stylesheet" href="/css/footer.css">
 </head>
