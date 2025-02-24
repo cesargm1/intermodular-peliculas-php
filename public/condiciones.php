@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminos y condiciones</title>
+    <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
+    <link rel="stylesheet" href="/css/conditions.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
-    <main>
+    <?php include_once '../resources/header.php'; ?>
+    <main class="main">
         <h1>Términos y Condiciones de Peflix</h1>
 
         <section>
@@ -79,12 +84,7 @@
                 </p>
             </article>
         </section>
-        <section>
-            <article>
-                <p></p>
-            </article>
-        </section>
-
+        
         <section>
             <article>
                 <p>
@@ -93,6 +93,7 @@
             </article>
         </section>
     </main>
+    <?php include_once "../resources/footer.php"; ?>
 </body>
 
 </html>
