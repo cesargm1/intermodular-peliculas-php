@@ -44,6 +44,7 @@ body {
 				border-bottom: 1px solid black;
 				width: 100%;
 				max-width: 600px;
+				
 
 				label {
 					display: flex;
@@ -73,12 +74,23 @@ body {
 					}
 				}
 			}
+
+			.file__container{
+				border: 1px solid #ccc;
+  				padding: 6px 12px;
+  				cursor: pointer;
+				background-color: variables.$color-cart-button;
+
+			}
+
+
 			.button {
 				padding: 1em;
 				background-color: variables.$color-cart-button;
 				border: none;
 				cursor: pointer;
 			}
+
 		}
 	}
 }

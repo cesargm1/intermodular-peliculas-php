@@ -4,81 +4,63 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Crear productos</title>
-		<link rel="stylesheet" href="/css/panel.css" />
+		<link rel="stylesheet" href="/css/login.css" />
 	</head>
 	<body class="body">
-		<h1 class="body__h1">Insertar peliculas</h1>
+		<main class="main">
+			<section class="main__section">
+				<form
+					class="form"
+					action="/panel/crear_pelicula.php"
+					method="post"
+					enctype="multipart/form-data"
+				>
+					<h1 class="h1">añadir peliculas</h1>
 
-		<section class="body__section">
-			<form
-				class="body__section__form"
-				action="/panel/crear_pelicula.php"
-				method="post"
-				enctype="multipart/form-data"
-			>
-				<div class="body__section__form__wrap">
-					<label class="warp__label">
-						<img
-							class="body__section__form__wrap__label__img"
-							src="/svg/icon_fill_name.svg"
-							alt="svg"
-						/>
-						<input
-							class="body__section__form__input"
-							type="text"
-							name="nombre"
-							required
-						/>
-					</label>
-				</div>
+					<div class="input__container">
+						<label class="warp__label">
+							Nombre
+							<input class="input" type="text" name="nombre" required />
+						</label>
+					</div>
 
-				<div class="body__section__form__wrap">
-					<label class="form__label">
-						descripcion
-						<textarea
-							class="body__section__form__textarea"
-							name="descripcion"
-							required
-						></textarea>
-					</label>
-				</div>
+					<div class="input__container">
+						<label class="form__label">
+							descripcion
+							<textarea class="input" name="descripcion" required></textarea>
+						</label>
+					</div>
 
-				<div class="body__section__form__wrap">
-					<label class="warp__label">
-						Precio
-						<input
-							class="body__section__form__input"
-							type="number"
-							name="precio"
-							required
-						/>
-					</label>
-				</div>
+					<div class="input__container">
+						<label class="warp__label">
+							Precio
+							<input class="input" type="number" name="precio" required />
+						</label>
+					</div>
 
-				<div class="body__section__form__wrap">
-					<label class="warp__label">
-						Genero
-						<input
-							class="body__section__form__input"
-							type="text"
-							name="genero"
-							required
-						/>
-					</label>
-				</div>
+					<div class="input__container">
+						<label class="warp__label">
+							Genero
+							<input class="input" type="text" name="genero" required />
+						</label>
+					</div>
 
-				<label class="form__label">
-					Imagen
-					<input
-						class="body__section__form__input"
-						type="file"
-						accept="image/png, image/jpeg, image/webp"
-						name="imagen"
-						required
-					/>
-				</label>
-				<button type="submit">Insertar pelicula</button>
-			</form>
-		</section>
+					<div class="file__container">
+						<label class="form__label">
+							Seleciona la imagen de la pelicula
+							<input
+								class="input"
+								type="file"
+								accept="image/png, image/jpeg, image/webp"
+								name="imagen"
+								required
+							/>
+						</label>
+					</div>
+
+					<button class="button" type="submit">Insertar pelicula</button>
+				</form>
+			</section>
+		</main>
 	</body>
 </html>
