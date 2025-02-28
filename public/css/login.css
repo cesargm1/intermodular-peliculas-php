@@ -69,10 +69,22 @@ body {
   height: 100%;
 }
 .main__section .form .file__container {
-  border: 1px solid #ccc;
-  padding: 6px 12px;
   cursor: pointer;
+  display: flex;
   background-color: #1c97c5;
+}
+.main__section .form .form__label__file {
+  width: 100%;
+  padding: 0.5em;
+  color: black;
+  text-align: center;
+}
+.main__section .form .input__file {
+  opacity: 0;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
 .main__section .form .button {
   padding: 1em;
