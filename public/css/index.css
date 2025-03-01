@@ -1,0 +1,91 @@
+.banner {
+  position: relative;
+  padding: 3em 2em;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  background-image: url(/img/banner.jpeg);
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  filter: brightness(0.3);
+  border-radius: 0 60px;
+}
+.banner a {
+  cursor: pointer;
+  padding: 1em;
+  position: relative;
+  display: block;
+  color: black;
+  background-color: white;
+  margin-top: 2em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 4px #a8a1a1, 2px 4px 6px inset #585757;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  position: relative;
+  color: white;
+}
+
+.description {
+  margin-top: 2em;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-top: 1rem;
+  color: white;
+  position: relative;
+}
+.description strong {
+  color: #e40000;
+}
+
+.icons {
+  background-color: rgb(222, 100, 100);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em 0em;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+.icons .icon {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__carousel {
+  display: flex;
+}
+.container__carousel .carousel {
+  max-width: 1000px;
+  display: flex;
+  margin: auto;
+}
+.container__carousel .carousel .slide {
+  width: 100%;
+  background-size: cover;
+}
+.container__carousel .carousel .slide__img {
+  aspect-ratio: 1/2;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.container__carousel .next,
+.container__carousel .prev {
+  padding: 1em;
+  background-color: rgb(113, 109, 109);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header.header {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  grid-area: header;
+  min-width: 100%;
+}
+header.header nav {
+  flex: 1;
+}
+header.header nav .icon {
+  width: 30px;
+  height: 30px;
+}
+header.header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header.header nav ul li {
+  list-style: none;
+  flex: 1;
+  width: 100%;
+  max-width: 600px;
+}
+header.header nav ul li a {
+  text-decoration: none;
+}
+header.header nav ul li form .container__serch {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 0.5em;
+  width: 100%;
+  max-width: 600px;
+}
+header.header nav ul li form .container__serch label {
+  width: 100%;
+}
+header.header nav ul li form .container__serch label .search {
+  border: none;
+  width: 100%;
+}
+header.header nav ul li form .container__serch label .search:focus {
+  outline: none;
+}
+header.header nav ul li .container__icon {
+  display: flex;
+  justify-content: center;
+}
+header.header nav ul li .container__icon .button--icon {
+  border: none;
+  background-color: transparent;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  grid-area: footer;
+}
+.footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em;
+  list-style: none;
+}
+.footer ul li {
+  list-style: none;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+main {
+  flex: 1;
+  padding: 1em;
+  max-width: 1024px;
+  margin: auto;
+}
+
+/*# sourceMappingURL=main.css.map */
