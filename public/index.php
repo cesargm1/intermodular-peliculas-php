@@ -18,8 +18,9 @@ $peliculas = ObtenerPeliculas::getAll();
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/index.css">
-    <script src="src/carousel.js"></script>
-
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -56,10 +57,10 @@ $peliculas = ObtenerPeliculas::getAll();
         </div>
 
         <h2>peliculas añadidas recientemente </h2>
-
-        <section class="container__carousel">
-            <button class="prev">&#10094;</button>
-            <div class="carousel">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
                 <?php
 
                 $peliculas =  ObtenerPeliculas::lastFilms(3);
@@ -67,16 +68,27 @@ $peliculas = ObtenerPeliculas::getAll();
                     $imagen = $pelicula['imagen'];
                     $nombre = $pelicula['nombre'];
                 ?>
-                    <div class="slide">
+                    <div class="swiper-slide">
                         <img class="slide__img" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
                     </div>
                 <?php }  ?>
             </div>
-            <button class="next">&#10095;</button>
-        </section>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
     </main>
 
     <?php include_once '../resources/footer.php' ?>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+
 </body>
 
 </html>
