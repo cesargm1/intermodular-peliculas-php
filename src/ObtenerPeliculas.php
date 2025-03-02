@@ -100,7 +100,7 @@ class ObtenerPeliculas
     public static function lastFilms(int $perPage = 3): array
     {
         $conn = Connection::conn();
-        $query = "SELECT * FROM peliculas ORDER BY id DESC LIMIT $perPage ";
+        $query = "SELECT * FROM peliculas ORDER BY pelicula_id DESC LIMIT $perPage ";
         $result = $conn->query($query);
         return $result->fetch_all(MYSQLI_ASSOC);
     }

@@ -55,21 +55,22 @@ $peliculas = ObtenerPeliculas::getAll();
 
         </div>
 
-        <h2>Las mejores</h2>
+        <h2>peliculas añadidas recientemente </h2>
+
         <section class="container__carousel">
             <button class="prev">&#10094;</button>
             <div class="carousel">
-                <div class="slide">
-                    <img class="slide__img" src="img/carousel/harry_potter.jpg" alt="harry potter">
-                </div>
+                <?php
 
-                <div class="slide">
-                    <img class="slide__img" src="img/carousel/star_wars.jpg" alt="star wars">
-                </div>
-
-                <div class="slide">
-                    <img class="slide__img" src="img/carousel/joker.jpg" alt="joker">
-                </div>
+                $peliculas =  ObtenerPeliculas::lastFilms(3);
+                foreach ($peliculas as $pelicula) {
+                    $imagen = $pelicula['imagen'];
+                    $nombre = $pelicula['nombre'];
+                ?>
+                    <div class="slide">
+                        <img class="slide__img" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
+                    </div>
+                <?php }  ?>
             </div>
             <button class="next">&#10095;</button>
         </section>
