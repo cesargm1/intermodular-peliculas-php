@@ -63,12 +63,12 @@ $peliculas = ObtenerPeliculas::getAll();
                 <!-- Slides -->
                 <?php
 
-                $peliculas =  ObtenerPeliculas::lastFilms(3);
+                $peliculas =  ObtenerPeliculas::lastFilms(2);
                 foreach ($peliculas as $pelicula) {
                     $imagen = $pelicula['imagen'];
                     $nombre = $pelicula['nombre'];
                 ?>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" data-swiper-autoplay="2000">
                         <img class="slide__img" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
                     </div>
                 <?php }  ?>

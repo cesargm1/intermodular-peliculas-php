@@ -1,6 +1,6 @@
 const swiper = new Swiper(".swiper", {
 	// Optional parameters
-	direction: "vertical",
+	direction: "horizontal",
 	loop: true,
 
 	// If we need pagination
@@ -18,4 +18,17 @@ const swiper = new Swiper(".swiper", {
 	scrollbar: {
 		el: ".swiper-scrollbar",
 	},
+
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false
+	},
+	loop: true,
+
+// 	effect: 'cube',
+//   cubeEffect: {
+//     slideShadows: false,
+//   },
 });
+
+
