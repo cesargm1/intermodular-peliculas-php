@@ -89,8 +89,6 @@ header.header nav ul li .container__icon .button--icon {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   min-height: 100dvh;
 }
 

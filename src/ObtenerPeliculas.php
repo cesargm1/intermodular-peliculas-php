@@ -105,6 +105,14 @@ class ObtenerPeliculas
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public static function cheapFilms(int $perPage = 3): array
+    {
+        $conn = Connection::conn();
+        $query = "SELECT * FROM peliculas ORDER BY precio ASC LIMIT $perPage ";
+        $result = $conn->query($query);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public static function generos(): array
     {
         $conn = Connection::conn();

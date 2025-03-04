@@ -16,14 +16,15 @@ $peliculas = ObtenerPeliculas::getAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
-<body>
+<body class="body">
     <?php include_once '../resources/header.php' ?>
 
     <main class="main">
@@ -63,7 +64,37 @@ $peliculas = ObtenerPeliculas::getAll();
                 <!-- Slides -->
                 <?php
 
-                $peliculas =  ObtenerPeliculas::lastFilms(2);
+                $peliculas =  ObtenerPeliculas::lastFilms();
+                foreach ($peliculas as $pelicula) {
+                    $imagen = $pelicula['imagen'];
+                    $nombre = $pelicula['nombre'];
+                ?>
+                    <div class="swiper-slide" data-swiper-autoplay="2000">
+                        <img class="slide__img" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
+                    </div>
+                <?php }  ?>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+
+        <h2>Peliculas mas economicas</h2>
+
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <?php
+
+                $peliculas =  ObtenerPeliculas::cheapFilms();
                 foreach ($peliculas as $pelicula) {
                     $imagen = $pelicula['imagen'];
                     $nombre = $pelicula['nombre'];
@@ -86,7 +117,6 @@ $peliculas = ObtenerPeliculas::getAll();
     </main>
 
     <?php include_once '../resources/footer.php' ?>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>
 
 </body>

@@ -1,11 +1,17 @@
 const swiper = new Swiper(".swiper", {
 	// Optional parameters
 	direction: "horizontal",
-	loop: true,
+	clickable: true,
+	disableOnInteraction: false,
+
+	//loop: true,
 
 	// If we need pagination
 	pagination: {
 		el: ".swiper-pagination",
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
 	},
 
 	// Navigation arrows
@@ -19,16 +25,20 @@ const swiper = new Swiper(".swiper", {
 		el: ".swiper-scrollbar",
 	},
 
-	autoplay: {
-		delay: 5000,
-		disableOnInteraction: false
-	},
-	loop: true,
+	// autoplay: {
+	// 	delay: 5000,
+	// },
+	//loop: true,
 
-// 	effect: 'cube',
-//   cubeEffect: {
-//     slideShadows: false,
-//   },
+	effect: "cube",
+	grabCursor: true,
+	cubeEffect: {
+	  shadow: true,
+	  slideShadows: true,
+	  shadowOffset: 20,
+	  shadowScale: 0.94,
+	},
+
 });
 
 
