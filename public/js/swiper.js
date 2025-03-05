@@ -4,8 +4,6 @@ const swiper = new Swiper(".swiper", {
 	clickable: true,
 	disableOnInteraction: false,
 
-	//loop: true,
-
 	// If we need pagination
 	pagination: {
 		el: ".swiper-pagination",
@@ -25,10 +23,10 @@ const swiper = new Swiper(".swiper", {
 		el: ".swiper-scrollbar",
 	},
 
-	// autoplay: {
-	// 	delay: 5000,
-	// },
-	//loop: true,
+	 autoplay: {
+	 	delay: 5000,
+	 },
+	loop: true,
 
 	effect: "cube",
 	grabCursor: true,

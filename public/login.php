@@ -72,11 +72,58 @@ $telefono = $_POST['telefono'] ?? '';
                     </label>
                 </div>
 
+
+                <label>
+                    <div class="icon__container">
+                        <p>Escribe el capcha</p>
+                        <input class="input" type="text" name="capcha" />
+                    </div>
+                </label>
+                <img class="img__capcha" src="../capcha/funcs/generate_code.php" alt="capcha" />
+
+
+                <button class="button-generate-capcha" type="button">
+                    + genera nuevo codigo
+                </button>
+
                 <button class="button" type="submit">Registrar usuario</button>
             </form>
         </section>
     </main>
     <?php include_once '../resources/footer.php' ?>
 </body>
+
+<script>
+    // por js selecionamos la imagen del capcha y tambien el boton de generar nuevo
+    const imgCodes = document.querySelector(".img__capcha");
+    const buttonsGenerate = document.querySelector(".button-generate-capcha");
+    buttonsGenerate.addEventListener('click', generateCode, false)
+
+    // Creamos un evento click al boton para que suceda algo llarama a una funcion
+
+    /*parametros
+
+    useCapture	Optional (default = false).
+    false - The handler is executed in the bubbling phase.
+    true - The handler is executed in the capturing phase.
+    */
+
+    //  al hacer click llama a la funcion generateCode le pasamos los botones como parametro
+
+    function generateCode() {
+
+
+        // aqui le decimos donde esta el script para que cambie la imagen
+        let url = "../capcha/funcs/generate_code.php";
+
+        fetch(url)
+            .then(response => response.blob())
+            .then(data => {
+                if (data) {
+                    imgCodes.src = URL.createObjectURL(data)
+                }
+            })
+    }
+</script>
 
 </html>
