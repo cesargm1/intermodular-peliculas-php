@@ -72,15 +72,35 @@ $peliculas = $carrito->peliculas();
                     echo "<p>Cesta vacia</p>";
                 } else {
                 ?>
-                    <a class="buy" href="login.php">comprar</a>
-                <?php } ?>
-                <span>Total: <?php echo $total ?>€ </span>
+                    <button class="buy">resumen de la compra</button>
+                    <div class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+                                <h2>Resumen de la compra</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p>Nombre del producto</p>
 
+                                <p>Some other text...</p>
+                                <span>Total: <?php echo $total ?>€ </span>
+                                <br>
+                                <a class="buy" href="login.php">Confirmar compra</a>
+                            </div>
+                            <div class="modal-footer">
+                                <h3>Modal Footer</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php } ?>
             </section>
 
         </div>
     </main>
     <?php include_once '../resources/footer.php' ?>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

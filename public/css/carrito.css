@@ -25,6 +25,12 @@ body .container .section__div {
   color: white;
   border: solid 2px #205c76;
   box-shadow: rgba(0, 0, 0, 0.3);
+  /* Modal Content */
+  /* Modal Header */
+  /* Modal Body */
+  /* Modal Footer */
+  /* Close Button */
+  /* Animations */
 }
 body .container .section__div .peliculas {
   display: grid;
@@ -72,6 +78,72 @@ body .container .section__div .peliculas .buy {
 }
 body .container .section__div .peliculas .buy:hover {
   background-color: #2083aa;
+}
+body .container .section__div .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+body .container .section__div .modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 50%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+body .container .section__div .modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+body .container .section__div .modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+body .container .section__div .modal-body {
+  padding: 15px 0;
+  color: #555;
+  font-size: 16px;
+}
+body .container .section__div .modal-footer {
+  padding-top: 10px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+body .container .section__div .close {
+  color: #777;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+body .container .section__div .close:hover {
+  color: #e74c3c;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=carrito.css.map */
