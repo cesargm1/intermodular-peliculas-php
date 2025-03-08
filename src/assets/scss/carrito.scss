@@ -35,6 +35,11 @@ body {
 				border-top: solid 2px black;
 				padding: 1em;
 
+				.cantidad__buttons {
+					display: flex;
+					align-items: center;
+				}
+
 				.peliculas:hover {
 					background-color: variables.$color-cart-border;
 				}
@@ -66,17 +71,36 @@ body {
 				.cantidad__buttons {
 					display: flex;
 					gap: 1em;
+
+					.quit,
+					.add {
+						text-decoration: none;
+						font-size: 14px;
+						background-color: variables.$color-cart-button;
+						color: variables.$color-cart-text;
+						border-radius: 50%;
+						width: 16px;
+						height: 16px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
 				}
 
 				.cantidad {
 					grid-area: cantidad;
 				}
+			}
 
+			.section__buy {
+				padding: 0.5em;
 				.buy {
 					background-color: variables.$color-cart-button;
 					border: none;
 					padding: 1em;
 					cursor: pointer;
+					text-decoration: none;
+					color: black;
 				}
 
 				.buy:hover {
@@ -131,6 +155,13 @@ body {
 				padding: 15px 0;
 				color: #555;
 				font-size: 16px;
+			}
+
+			.modal__img {
+				width: 100%;
+				max-height: 300px;
+				object-fit: contain;
+				padding: 0.5em;
 			}
 
 			.container__modal {

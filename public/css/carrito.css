@@ -40,6 +40,10 @@ body .container .section__div .peliculas {
   border-top: solid 2px black;
   padding: 1em;
 }
+body .container .section__div .peliculas .cantidad__buttons {
+  display: flex;
+  align-items: center;
+}
 body .container .section__div .peliculas .peliculas:hover {
   background-color: #205c76;
 }
@@ -67,16 +71,34 @@ body .container .section__div .peliculas .cantidad__buttons {
   display: flex;
   gap: 1em;
 }
+body .container .section__div .peliculas .cantidad__buttons .quit,
+body .container .section__div .peliculas .cantidad__buttons .add {
+  text-decoration: none;
+  font-size: 14px;
+  background-color: #1c97c5;
+  color: #d0e4f1;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 body .container .section__div .peliculas .cantidad {
   grid-area: cantidad;
 }
-body .container .section__div .peliculas .buy {
+body .container .section__div .section__buy {
+  padding: 0.5em;
+}
+body .container .section__div .section__buy .buy {
   background-color: #1c97c5;
   border: none;
   padding: 1em;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
-body .container .section__div .peliculas .buy:hover {
+body .container .section__div .section__buy .buy:hover {
   background-color: #2083aa;
 }
 body .container .section__div .modal {
@@ -117,6 +139,12 @@ body .container .section__div .modal-body {
   padding: 15px 0;
   color: #555;
   font-size: 16px;
+}
+body .container .section__div .modal__img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  padding: 0.5em;
 }
 body .container .section__div .container__modal {
   padding: 1em 0em;

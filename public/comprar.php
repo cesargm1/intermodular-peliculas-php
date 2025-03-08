@@ -67,5 +67,44 @@ $carrito = new Carrito();
 $carrito->asociarUsuario($usuarioId);
 $session = new Session();
 $session->regenerateId();
+?>
 
-echo "Tu compra fue realizada correctamente";
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compra realizada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .message {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message">
+        <h1>¡Gracias por tu compra!</h1>
+        <p>
+            Tu compra de nuestra aplicación de películas se ha realizado con éxito.
+        </p>
+        <p>
+            Esperamos que disfrutes de una experiencia cinematográfica increíble.
+        </p>
+        <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
+        <p><strong>¡Que disfrutes de tus películas!</strong></p>
+    </div>
+</body>
+
+</html>

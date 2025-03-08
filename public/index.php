@@ -47,12 +47,12 @@ $peliculas = ObtenerPeliculas::getAll();
 
             <div class="clock icon">
                 <img src="svg/main_page/clock.svg" alt="clock">
-                <p>Compra rapida</p>
+                <p>Tiempo expres</p>
             </div>
 
             <div class="trunk icon">
-                <img src="svg/main_page/trunk.svg" alt="bolsa">
-                <p>Compra rapida</p>
+                <img src="svg/main_page/trunk.svg" alt="envio">
+                <p>seguimiento del pedido 24h</p>
             </div>
 
         </div>

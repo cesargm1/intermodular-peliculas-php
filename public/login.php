@@ -72,14 +72,14 @@ $telefono = $_POST['telefono'] ?? '';
                     </label>
                 </div>
 
-
-                <label>
-                    <div class="icon__container">
-                        <p>Escribe el capcha</p>
-                        <input class="input" type="text" name="capcha" />
-                    </div>
-                </label>
+                <div class="input__container">
+                    <label>
+                        <input class="input" type="text" name="capcha" placeholder="Escribe el capcha" />
+                    </label>
+                </div>
                 <img class="img__capcha" src="../capcha/funcs/generate_code.php" alt="capcha" />
+
+
 
 
                 <button class="button-generate-capcha" type="button">

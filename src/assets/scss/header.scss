@@ -22,11 +22,15 @@ header.header {
 		ul {
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			justify-content: space-evenly;
+			gap: 1em;
 
 			li {
 				list-style: none;
-				flex: 1;
+			}
+
+			.li__search {
+				list-style: none;
 				width: 100%;
 				max-width: 600px;
 				a {

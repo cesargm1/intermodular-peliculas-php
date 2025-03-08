@@ -86,7 +86,8 @@ body {
   position: absolute;
   z-index: -1;
 }
-.main__section .form .button {
+.main__section .form .button,
+.main__section .form .button-generate-capcha {
   padding: 1em;
   background-color: #1c97c5;
   border: none;
