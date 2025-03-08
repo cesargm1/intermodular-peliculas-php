@@ -72,6 +72,7 @@ $peliculas = $carrito->peliculas();
                     echo "<p>Cesta vacia</p>";
                 } else {
                 ?>
+
                     <button class="buy">resumen de la compra</button>
                     <div class="modal">
                         <!-- Modal content -->
@@ -81,15 +82,30 @@ $peliculas = $carrito->peliculas();
                                 <h2>Resumen de la compra</h2>
                             </div>
                             <div class="modal-body">
-                                <p>Nombre del producto</p>
 
-                                <p>Some other text...</p>
-                                <span>Total: <?php echo $total ?>€ </span>
-                                <br>
-                                <a class="buy" href="login.php">Confirmar compra</a>
+                                <?php
+                                foreach ($peliculas as $pelicula) {
+                                    $nombre = $pelicula['nombre'];
+                                    $precio = $pelicula['precio'];
+                                    $cantidad = $pelicula['cantidad'];
+
+                                ?>
+                                    <section class="container__modal">
+                                        <p>Nombre del producto: <?php echo $nombre ?> </p>
+                                        <hr>
+
+                                        <p>cantidad :<?php echo $cantidad ?> </p>
+                                        <p>precio del producto: <?php echo $precio * $cantidad ?>€ </p>
+                                    <?php  } ?>
+                                    </section>
+
+                                    <br>
+                                    <span>Total a pagar: <?php echo $total ?>€ </span>
+                                    <br>
+                                    <a class="buy" href="login.php">Confirmar compra</a>
                             </div>
                             <div class="modal-footer">
-                                <h3>Modal Footer</h3>
+                                <h3>Gracias por su compra esperamos volver a verle 😊</h3>
                             </div>
                         </div>
                     </div>

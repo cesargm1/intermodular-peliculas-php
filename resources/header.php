@@ -27,6 +27,12 @@
                     <a href="/cesta.php"><img src="/svg/nav/cart.svg" alt="glass" class="icon"></a>
                 </div>
             </li>
+
+            <li>
+                <div class="container__icon">
+                    <a href="/catalogo.php"><img src="/svg/nav/films.svg" alt="films" class="icon"></a>
+                </div>
+            </li>
         </ul>
     </nav>
 </header>
