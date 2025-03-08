@@ -57,9 +57,9 @@ $peliculas = $carrito->peliculas();
                     <img class="img cart-text" title="<?php echo $nombre ?>" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
                     <p class="nombre cart-text"><?php echo $nombre ?></p>
                     <div class="cantidad__buttons">
-                        <a class="quit" href="/cesta.php?accion=quitar&peliculaId=<?php echo $peliculaId ?>">quitar</a>
+                        <a class="quit" href="/cesta.php?accion=quitar&peliculaId=<?php echo $peliculaId ?>">-</a>
                         <p class="cantidad cart-text"> <?php echo "cantidad: " . $cantidad ?></p>
-                        <a class="add" href="/cesta.php?peliculaId=<?php echo $peliculaId ?>">añadir</a>
+                        <a class="add" href="/cesta.php?peliculaId=<?php echo $peliculaId ?>">+</a>
                     </div>
                     <p class="precio cart-text"> <?php echo  $precio * $cantidad ?>€</p>
                 </section>
@@ -73,7 +73,7 @@ $peliculas = $carrito->peliculas();
                 } else {
                 ?>
 
-                    <button class="buy">resumen de la compra</button>
+                    <button class="buy">Detalles de la compra</button>
                     <div class="modal">
                         <!-- Modal content -->
                         <div class="modal-content">
@@ -88,24 +88,32 @@ $peliculas = $carrito->peliculas();
                                     $nombre = $pelicula['nombre'];
                                     $precio = $pelicula['precio'];
                                     $cantidad = $pelicula['cantidad'];
+                                    $imagen = $pelicula['imagen'];
+
 
                                 ?>
                                     <section class="container__modal">
+
                                         <p>Nombre del producto: <?php echo $nombre ?> </p>
                                         <hr>
 
-                                        <p>cantidad :<?php echo $cantidad ?> </p>
-                                        <p>precio del producto: <?php echo $precio * $cantidad ?>€ </p>
-                                    <?php  } ?>
-                                    </section>
+                                        <p>Imagen del producto</p>
 
+                                        <img class="modal__img" title="<?php echo $nombre ?>" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
+
+                                        <section class="buy__detaills">
+
+                                            <p>cantidad :<?php echo $cantidad ?> </p>
+                                            <p>precio del producto: <?php echo $precio * $cantidad ?>€ </p>
+                                        <?php  } ?>
+                                        </section>
+                                    </section>
                                     <br>
                                     <span>Total a pagar: <?php echo $total ?>€ </span>
                                     <br>
                                     <a class="buy" href="login.php">Confirmar compra</a>
                             </div>
                             <div class="modal-footer">
-                                <h3>Gracias por su compra esperamos volver a verle 😊</h3>
                             </div>
                         </div>
                     </div>

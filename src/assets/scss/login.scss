@@ -44,7 +44,6 @@ body {
 				border-bottom: 1px solid black;
 				width: 100%;
 				max-width: 600px;
-				
 
 				label {
 					display: flex;
@@ -75,19 +74,18 @@ body {
 				}
 			}
 
-			.file__container{
-  				cursor: pointer;
+			.file__container {
+				cursor: pointer;
 				display: flex;
 				background-color: variables.$color-cart-button;
-
 			}
-			.form__label__file{
+			.form__label__file {
 				width: 100%;
-				padding: .5em;
+				padding: 0.5em;
 				color: black;
 				text-align: center;
 			}
-			.input__file{
+			.input__file {
 				opacity: 0;
 				width: 100%;
 				overflow: hidden;
@@ -95,14 +93,13 @@ body {
 				z-index: -1;
 			}
 
-
-			.button {
+			.button,
+			.button-generate-capcha {
 				padding: 1em;
 				background-color: variables.$color-cart-button;
 				border: none;
 				cursor: pointer;
 			}
-
 		}
 	}
 }

@@ -7,7 +7,7 @@
                 </div>
             </li>
 
-            <li>
+            <li class="li__search">
                 <form action="/buscador.php" method="get">
                     <div class="container__serch">
                         <label>

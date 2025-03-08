@@ -21,18 +21,21 @@ header.header nav .icon {
 header.header nav ul {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 1em;
 }
 header.header nav ul li {
   list-style: none;
-  flex: 1;
+}
+header.header nav ul .li__search {
+  list-style: none;
   width: 100%;
   max-width: 600px;
 }
-header.header nav ul li a {
+header.header nav ul .li__search a {
   text-decoration: none;
 }
-header.header nav ul li form .container__serch {
+header.header nav ul .li__search form .container__serch {
   display: flex;
   align-items: center;
   border: 1px solid black;
@@ -41,21 +44,21 @@ header.header nav ul li form .container__serch {
   width: 100%;
   max-width: 600px;
 }
-header.header nav ul li form .container__serch label {
+header.header nav ul .li__search form .container__serch label {
   width: 100%;
 }
-header.header nav ul li form .container__serch label .search {
+header.header nav ul .li__search form .container__serch label .search {
   border: none;
   width: 100%;
 }
-header.header nav ul li form .container__serch label .search:focus {
+header.header nav ul .li__search form .container__serch label .search:focus {
   outline: none;
 }
-header.header nav ul li .container__icon {
+header.header nav ul .li__search .container__icon {
   display: flex;
   justify-content: center;
 }
-header.header nav ul li .container__icon .button--icon {
+header.header nav ul .li__search .container__icon .button--icon {
   border: none;
   background-color: transparent;
 }
