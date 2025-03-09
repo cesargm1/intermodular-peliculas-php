@@ -93,7 +93,7 @@ body .container .section__div .section__buy {
 body .container .section__div .section__buy .buy {
   background-color: #1c97c5;
   border: none;
-  padding: 1em;
+  padding: 0.5em;
   cursor: pointer;
   text-decoration: none;
   color: black;

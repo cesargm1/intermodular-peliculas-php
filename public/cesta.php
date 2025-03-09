@@ -104,12 +104,14 @@ $peliculas = $carrito->peliculas();
                                         <section class="buy__detaills">
 
                                             <p>cantidad :<?php echo $cantidad ?> </p>
-                                            <p>precio del producto: <?php echo $precio * $cantidad ?>€ </p>
+                                            <p>precio unitario del producto: <?php echo $precio ?>€ </p>
+                                            <p>Total producto: <?php echo $precio * $cantidad ?>€ </p>
+
                                         <?php  } ?>
                                         </section>
+                                        <p>Total a pagar: <?php echo $total ?>€ </p>
                                     </section>
                                     <br>
-                                    <span>Total a pagar: <?php echo $total ?>€ </span>
                                     <br>
                                     <a class="buy" href="login.php">Confirmar compra</a>
                             </div>
