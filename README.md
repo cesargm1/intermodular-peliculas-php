@@ -31,6 +31,13 @@ composer install
 composer server
 ```
 
+## Tratamiento de imagenes capcha
+
+> [!IMPORTANT]
+> Para que funcione el capcha descomentar en el archivo php.ini la linea 922 para que php pueda trabajar con imagenes y luego reiniciar el servidor:
+
+Informacion sobre cada rama y commits en: [Distribucion de cada rama](RAMAS.md)
+
 ## Codigo fuente
 
 [Repositorio Github](https://github.com/cesargm1/intermodular-peliculas-php.git)
