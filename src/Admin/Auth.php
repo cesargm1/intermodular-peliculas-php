@@ -26,11 +26,13 @@ class Auth
         }
 
         session_start([
-            'name' => 'panel_session'
+            'name' => 'panel_session',
+            'cookie_lifetime' => 1800
         ]);
 
         $_SESSION['id'] = $user->usuario_id;
         $_SESSION['name'] = $user->nombre;
+        $_SESSION['cookie_lifetime'] = $user->cookie;
 
         return true;
     }
@@ -38,7 +40,9 @@ class Auth
     public function check(): bool
     {
         session_start([
-            'name' => 'panel_session'
+            'name' => 'panel_session',
+            'cookie_lifetime' => 1800
+
         ]);
 
         $id = $_SESSION['id'] ?? false;
@@ -58,5 +62,17 @@ class Auth
             header('Location: /panel/login.php');
             die();
         }
+    }
+
+    public static function logOut()
+    {
+        // Inicializar la sesión.
+        // Si está usando session_name("algo"), ¡no lo olvide ahora!
+        session_start([
+            'name' => 'panel_session',
+            'cookie_lifetime' => 1800
+        ]);
+        // Finalmente, destruir la sesión.
+        session_destroy();
     }
 }

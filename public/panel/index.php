@@ -26,12 +26,14 @@ $peliculas = ObtenerPeliculas::getAll();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Listado de peliculas</title>
 	<link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="/css/panel/tables.css">
+
 </head>
 <?php include_once '../../resources/panel/header.php' ?>
 
 <body>
 	<h1>Peliculas</h1>
-	<a href="/panel/crear.php">Añadir pelicula</a>
+	<a href="/panel/crear.php">Listado de peliculas</a>
 	<table>
 		<tr>
 			<th>#</th>

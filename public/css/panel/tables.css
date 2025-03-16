@@ -1,0 +1,81 @@
+body {
+  color: #d0e4f1;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+a {
+  color: #1c97c5;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 20px 0;
+  display: block;
+  text-align: center;
+}
+
+a:hover {
+  color: #2083aa;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #162730;
+  border: 1px solid #205c76;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #1e4a5e;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #205c76;
+}
+
+th {
+  background-color: #1b3846;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #1e4a5e;
+}
+
+tr:hover {
+  background-color: #1c97c5;
+  color: #ffffff;
+}
+
+button,
+input[type=submit] {
+  background-color: #1c97c5;
+  border: none;
+  color: #ffffff;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type=submit]:hover {
+  background-color: #2083aa;
+}
+
+button:active,
+input[type=submit]:active {
+  background-color: #216f90;
+}
+
+form {
+  display: inline;
+}
+
+/*# sourceMappingURL=tables.css.map */

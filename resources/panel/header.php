@@ -15,7 +15,13 @@
 
             <li>
                 <div class="container__icon">
-                    <a href="/usuarios.php"><img src="/svg/nav/user.svg" alt="films" class="icon"></a>
+                    <a href="/panel/usuarios.php"><img src="/svg/nav/user.svg" alt="usuarios" class="icon"></a>
+                </div>
+            </li>
+
+            <li>
+                <div class="container__icon">
+                    <a href="/panel/logout.php"><img src="/svg/nav/user.svg" alt="log out" class="icon"></a>
                 </div>
             </li>
         </ul>

@@ -1,0 +1,81 @@
+@use "../_variables";
+
+body {
+	color: variables.$color-text-general;
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+	color: variables.$color-text-primary;
+}
+
+a {
+	color: variables.$color-button-primary;
+	text-decoration: none;
+	font-size: 18px;
+	margin: 20px 0;
+	display: block;
+	text-align: center;
+}
+
+a:hover {
+	color: variables.$color-button-hover;
+}
+
+table {
+	width: 90%;
+	margin: 20px auto;
+	border-collapse: collapse;
+	background-color: variables.$color-bg-card;
+	border: 1px solid variables.$color-border-dark;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px variables.$color-shadow;
+}
+
+th,
+td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid variables.$color-border-dark;
+}
+
+th {
+	background-color: variables.$color-bg-highlight;
+	color: variables.$color-text-primary;
+	font-weight: bold;
+}
+
+tr:nth-child(even) {
+	background-color: variables.$color-bg-soft;
+}
+
+tr:hover {
+	background-color: variables.$color-button-primary;
+	color: variables.$color-text-primary;
+}
+
+button,
+input[type="submit"] {
+	background-color: variables.$color-button-primary;
+	border: none;
+	color: variables.$color-text-primary;
+	padding: 8px 16px;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+	background-color: variables.$color-button-hover;
+}
+
+button:active,
+input[type="submit"]:active {
+	background-color: variables.$color-button-active;
+}
+
+form {
+	display: inline;
+}
