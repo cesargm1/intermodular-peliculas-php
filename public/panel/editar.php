@@ -3,6 +3,8 @@
 use App\ActualizarPelicula;
 use App\Admin\Auth;
 use App\ObtenerPeliculas;
+use App\Validator;
+use App\ValidatorException;
 
 include_once '../../vendor/autoload.php';
 Auth::mustBeLogged();
@@ -13,6 +15,7 @@ if (!$peliculaId) {
 	die('pelicula no existe');
 }
 
+$messageError = '';
 $action = $_POST['action'] ?? null;
 
 if ($action === 'update') {
@@ -22,7 +25,23 @@ if ($action === 'update') {
 	$genero = $_POST['genero'];
 
 
-	ActualizarPelicula::actualizar($peliculaId, $nombre, $descripcion, $precio, $genero);
+	try {
+		$validatorName = new Validator($nombre, 'Nombre del producto');
+		$validatorName->require();
+
+		$validatorDescription = new Validator($descripcion, "descripcion del producto");
+		$validatorDescription->require();
+
+		$validatorPrecio = new Validator($precio, "Precio del producto");
+		$validatorPrecio->require()->min(0);
+
+		$validatorGenero = new Validator($genero, "Genero de la pelicula");
+		$validatorGenero->require();
+
+		ActualizarPelicula::actualizar($peliculaId, $nombre, $descripcion, $precio, $genero);
+	} catch (ValidatorException $exception) {
+		$messageError = $exception->getMessage();
+	}
 }
 
 $pelicula = ObtenerPeliculas::get($peliculaId);
@@ -52,6 +71,12 @@ if (!$pelicula) {
 				class="form"
 				method="post">
 				<h1 class="h1">editar pelicula</h1>
+
+				<?php
+				if ($messageError) {
+					echo "<span class='error'> $messageError </span>";
+				}
+				?>
 
 				<div class="input__container">
 					<label class="warp__label">

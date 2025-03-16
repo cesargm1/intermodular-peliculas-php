@@ -1,9 +1,48 @@
 <?php
 
 use App\Admin\Auth;
+use App\CrearPelicula;
+use App\Validator;
+use App\ValidatorException;
 
 include_once '../../vendor/autoload.php';
 Auth::mustBeLogged();
+
+
+$messageError = '';
+$action = $_POST['action'] ?? null;
+
+if ($action === 'crear') {
+	$nombre = $_POST['nombre'] ?? '';
+	$descripcion = $_POST['descripcion'] ?? '';
+	$precio = $_POST['precio'] ?? '';
+	$genero = $_POST['genero'] ?? '';
+	$imagen = $_FILES['imagen'] ?? '';
+
+
+	try {
+		$validatorName = new Validator($nombre, 'Nombre del producto');
+		$validatorName->require();
+
+		$validatorDescription = new Validator($descripcion, "descripcion del producto");
+		$validatorDescription->require();
+
+		$validatorPrecio = new Validator($precio, "Precio del producto");
+		$validatorPrecio->require()->min(0);
+
+		$validatorGenero = new Validator($genero, "Genero de la pelicula");
+		$validatorGenero->require();
+
+		$validatorImagen = new Validator($imagen['tmp_name'], "imagen del producto");
+		$validatorImagen->require();
+
+		$imagenContent = file_get_contents($imagen['tmp_name']);
+
+		$creada = CrearPelicula::crear($nombre, $descripcion, $precio, $genero, $imagenContent);
+	} catch (ValidatorException $exception) {
+		$messageError = $exception->getMessage();
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,10 +60,15 @@ Auth::mustBeLogged();
 		<section class="main__section">
 			<form
 				class="form"
-				action="/panel/crear_pelicula.php"
 				method="post"
 				enctype="multipart/form-data">
 				<h1 class="h1">añadir peliculas</h1>
+
+				<?php
+				if ($messageError) {
+					echo "<span class='error'> $messageError </span>";
+				}
+				?>
 
 				<div class="input__container">
 					<label class="warp__label">
@@ -66,7 +110,7 @@ Auth::mustBeLogged();
 					</label>
 				</div>
 
-				<button class="button" type="submit">Insertar pelicula</button>
+				<button class="button" type="submit" name="action" value="crear">Insertar pelicula</button>
 			</form>
 		</section>
 	</main>
