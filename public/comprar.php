@@ -12,6 +12,8 @@ $nombre = $_POST['nombre'] ?? '';
 $correo = $_POST['correo'] ?? '';
 $direccion = $_POST['direccion'] ?? '';
 $telefono = $_POST['telefono'] ?? '';
+$password = $_POST["password"] ?? '';
+$rol = $_POST['rol'] ?? '';
 
 
 try {
@@ -58,11 +60,14 @@ try {
 
     $validatorTelefono = new Validator($telefono, "Telefono del usuario");
     $validatorTelefono->require();
+
+    $validatorPassword = new Validator($password, "Contraseña del usuario");
+    $validatorPassword->require();
 } catch (ValidatorException $exception) {
     die($exception->getMessage());
 }
 
-$usuarioId = CrearUsuario::crear($nombre, $correo, $direccion, $telefono);
+$usuarioId = CrearUsuario::crear($nombre, $correo, $direccion, $telefono, $password, $rol);
 $carrito = new Carrito();
 $carrito->asociarUsuario($usuarioId);
 $session = new Session();

@@ -3,6 +3,7 @@ $nombre = $_POST['nombre'] ?? '';
 $correo = $_POST['correo'] ?? '';
 $direccion = $_POST['direccion'] ?? '';
 $telefono = $_POST['telefono'] ?? '';
+$rol = $_POST['rol'] ?? '';
 ?>
 
 
@@ -20,7 +21,7 @@ $telefono = $_POST['telefono'] ?? '';
 </head>
 
 <body>
-    <?php include_once '../resources/header.php' ?>
+    <?php include_once '../../resources/header.php' ?>
     <main class="main">
         <section class="main__section">
             <form class="form" action="/comprar.php" method="post">
@@ -74,6 +75,26 @@ $telefono = $_POST['telefono'] ?? '';
 
                 <div class="input__container">
                     <label>
+                        <div class="icon__container">
+                            <img class="img__icon" src="/svg/login/password.svg" alt="icono">
+                        </div>
+
+                        <input class="input" name="password" type="password" required placeholder="introduce tu contraseña">
+                    </label>
+                </div>
+
+                <div class="input__container">
+                    <label>
+                        <div class="icon__container">
+                            <img class="img__icon" src="/svg/login/password.svg" alt="icono">
+                        </div>
+
+                        <input class="input" name="password" type="password" required placeholder="Vuelve a introducir tu contraseña">
+                    </label>
+                </div>
+
+                <div class="input__container">
+                    <label>
                         <input class="input" type="text" name="capcha" placeholder="Escribe el capcha" />
                     </label>
                 </div>
@@ -85,12 +106,23 @@ $telefono = $_POST['telefono'] ?? '';
                 <button class="button-generate-capcha" type="button">
                     + genera nuevo codigo
                 </button>
+                <p>Elije tu rol</p>
+                <label>
+                    <label>administrador
+                        <input type="radio" class="rol" name="rol" value="admin">
+                    </label><br>
 
-                <button class="button" type="submit">Registrar usuario</button>
+                    <label>usuario
+                        <input type="radio" class="rol" name="rol" value="usuario">
+                    </label><br>
+                </label>
+
+                <button class="button" type="submit">Crear cuenta</button>
+                <a href="login.php">Ya tienes cuenta ? Inicia sesion</a>
             </form>
         </section>
     </main>
-    <?php include_once '../resources/footer.php' ?>
+    <?php include_once '../../resources/footer.php' ?>
 </body>
 
 <script>

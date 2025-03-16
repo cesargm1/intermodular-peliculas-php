@@ -1,10 +1,12 @@
 <?php
 
+use App\Admin\Auth;
 use App\CrearPelicula;
 use App\Validator;
 use App\ValidatorException;
 
 include_once '../../vendor/autoload.php';
+Auth::mustBeLogged();
 
 $nombre = $_POST['nombre'] ?? '';
 $descripcion = $_POST['descripcion'] ?? '';

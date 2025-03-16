@@ -35,7 +35,10 @@ CREATE TABLE usuarios (
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     direccion_envio VARCHAR(255),
-    telefono char(12)
+    telefono char(12),
+    password VARCHAR(100),
+    rol ENUM('admin', 'usuario')  NOT NULL DEFAULT 'usuario'
+
 );
 
 CREATE TABLE carrito (
