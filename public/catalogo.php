@@ -4,8 +4,12 @@ use App\ObtenerPeliculas;
 
 include_once '../vendor/autoload.php';
 
-$peliculas = ObtenerPeliculas::getAll();
+$page = $_GET['page'] ?? 1;
 
+$perPage = 4;
+
+$peliculas = ObtenerPeliculas::paginate((int)$page, $perPage);
+$numPages = ObtenerPeliculas::numPages($perPage);
 ?>
 
 <!DOCTYPE html>
@@ -49,8 +53,19 @@ $peliculas = ObtenerPeliculas::getAll();
 
             <?php } ?>
 
-
         </section>
+        <div class="paginate">
+            <?php
+            if ($page > 1) {
+            ?> <a class="next" href="/catalogo.php?page=<?php echo $page - 1 ?>">atras</a>
+            <?php } ?>
+
+            <?php
+            if ($page < $numPages) {
+            ?>
+                <a class="prev" href="/catalogo.php?page=<?php echo $page + 1 ?>">siguente</a>
+            <?php } ?>
+        </div>
     </main>
     <?php include_once '../resources/footer.php' ?>
 </body>

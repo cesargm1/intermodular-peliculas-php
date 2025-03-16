@@ -59,6 +59,7 @@ if ($email) {
 
                 </div>
                 <button class="button" type="submit">Iniciar sesion</button>
+                <a href="registro.php">no tienes cuenta crea una</a>
                 <?php
                 if ($messageError) {
                 ?>

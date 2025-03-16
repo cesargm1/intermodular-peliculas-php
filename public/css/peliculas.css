@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   flex: 1;
   display: grid;
-  grid-template-areas: "filter main main" "filter main main";
+  grid-template-areas: "filter main main" "filter main main" "paginate paginate paginate";
   grid-template-columns: 150px 1fr;
 }
 .main .error {
@@ -57,6 +57,21 @@ body {
 }
 .main .peliculas__article__button:active {
   background-color: #216f90;
+}
+.main .paginate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+  grid-area: paginate;
+}
+.main .next,
+.main .prev {
+  background-color: #1c97c5;
+  color: black;
+  padding: 0.5em;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=peliculas.css.map */

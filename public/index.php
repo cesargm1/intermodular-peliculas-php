@@ -3,9 +3,6 @@
 use App\ObtenerPeliculas;
 
 include_once '../vendor/autoload.php';
-
-$peliculas = ObtenerPeliculas::getAll();
-
 ?>
 
 <!DOCTYPE html>

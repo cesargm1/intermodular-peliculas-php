@@ -13,7 +13,9 @@ body {
 	display: grid;
 	grid-template-areas:
 		"filter main main"
-		"filter main main";
+		"filter main main"
+		"paginate paginate paginate";
+
 	grid-template-columns: 150px 1fr;
 
 	.error {
@@ -65,5 +67,22 @@ body {
 				}
 			}
 		}
+	}
+
+	.paginate {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		gap: 1em;
+		grid-area: paginate;
+	}
+
+	.next,
+	.prev {
+		background-color: variables.$color-button-primary;
+		color: black;
+		padding: 0.5em;
+		text-decoration: none;
 	}
 }
