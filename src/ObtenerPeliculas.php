@@ -13,6 +13,14 @@ class ObtenerPeliculas
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public static function get(int $peliculaId): null|false|object
+    {
+        $conn = Connection::conn();
+        $query = "SELECT * FROM  peliculas WHERE pelicula_id = $peliculaId";
+        $result = $conn->query($query);
+        return $result->fetch_object();
+    }
+
     public static function count(): int
     {
         $conn = Connection::conn();

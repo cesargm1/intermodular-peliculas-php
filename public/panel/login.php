@@ -28,13 +28,10 @@ if ($email) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
     <title>Formulario de registro</title>
-    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/footer.css">
 </head>
 
 <body>
-    <?php include_once '../../resources/header.php' ?>
     <main class="main">
         <section class="main__section">
             <form class="form" method="post">
@@ -72,7 +69,6 @@ if ($email) {
             </form>
         </section>
     </main>
-    <?php include_once '../../resources/footer.php' ?>
 </body>
 
 </html>

@@ -33,7 +33,7 @@ $peliculas = ObtenerPeliculas::getAll();
 
 <body>
 	<h1>Peliculas</h1>
-	<a href="/panel/crear.php">Listado de peliculas</a>
+	<a href="/panel/crear.php">Añadir nueva pelicula</a>
 	<table>
 		<tr>
 			<th>#</th>
@@ -50,7 +50,7 @@ $peliculas = ObtenerPeliculas::getAll();
 				<td><?php echo $pelicula['precio'] ?>€</td>
 				<td><?php echo $pelicula['genero'] ?></td>
 				<td>
-					<button>Editar</button>
+					<a href="/panel/editar.php?pelicula_id=<?php echo $pelicula['pelicula_id'] ?>">editar pelicula</a>
 					<form method="post">
 						<input type="hidden" name="pelicula_id" value="<?php echo $pelicula['pelicula_id'] ?>">
 						<input type="submit" name="action" value="eliminar">
