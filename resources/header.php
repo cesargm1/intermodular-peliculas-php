@@ -33,6 +33,13 @@
                     <a href="/catalogo.php"><img src="/svg/nav/films.svg" alt="films" class="icon"></a>
                 </div>
             </li>
+
+            <li>
+                <div class="container__icon">
+                    <a href="/panel/usuarios.php"><img src="/svg/login/user.svg" alt="usuarios" title="administrar usuarios" class="icon"></a>
+                </div>
+            </li>
+
         </ul>
     </nav>
 </header>
