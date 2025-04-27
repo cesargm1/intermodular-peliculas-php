@@ -61,7 +61,7 @@ include_once '../vendor/autoload.php';
                 <!-- Slides -->
                 <?php
 
-                $peliculas =  ObtenerPeliculas::lastFilms();
+                $peliculas =  ObtenerPeliculas::lastFilms(4);
                 foreach ($peliculas as $pelicula) {
                     $imagen = $pelicula['imagen'];
                     $nombre = $pelicula['nombre'];
