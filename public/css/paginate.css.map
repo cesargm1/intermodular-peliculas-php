@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../src/assets/scss/paginate.scss","../../src/assets/scss/_variables.scss"],"names":[],"mappings":"AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;AAAA;EAEI,kBCKmB;EDJnB;EACA;EACA","file":"paginate.css"}
+{"version":3,"sourceRoot":"","sources":["../../src/assets/scss/paginate.scss","../../src/assets/scss/_variables.scss"],"names":[],"mappings":"AAEA;EACI;EACA;EACA;EACA;EACA;EACA;;;AAGJ;AAAA;EAEI,kBCMmB;EDLnB;EACA;EACA","file":"paginate.css"}

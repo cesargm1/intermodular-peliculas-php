@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   flex: 1;
   display: grid;
-  grid-template-areas: "filter main main" "filter main main" "paginate paginate paginate";
+  grid-template-areas: "filter main main" "filter main main" "filter paginate paginate";
   grid-template-columns: 150px 1fr;
 }
 .main .error {

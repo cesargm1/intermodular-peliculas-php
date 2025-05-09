@@ -2,16 +2,18 @@
 
 use App\ObtenerPeliculas;
 
-include_once '../vendor/autoload.php';
+use App\User\Auth;
 
-$peliculaId = (int) ($_GET['id'] ?? '');
-$peliculaId =  ($_GET['peliculaId'] ?? '');
+include_once '../vendor/autoload.php';
+$peliculaId = (int) ($_GET['peliculaId'] ?? '');
 $pelicula = ObtenerPeliculas::get($peliculaId);
 $nombre = $pelicula->nombre ?? '';
 $peliculaId =  $pelicula->peliculaId ?? '';
 $precio = $pelicula->precio ?? '';
 $descripcion = $pelicula->descripcion ?? '';
 $imagen = $pelicula->imagen ?? '';
+$texto = $_POST['comentario'] ?? '';
+$userLogged = Auth::check();
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@ $imagen = $pelicula->imagen ?? '';
 
 <body>
     <?php include_once '../resources/header.php'; ?>
-    <main class="container">
+    <main class="main">
         <section class="peliculas">
             <article class="peliculas__article">
                 <img class="peliculas__article__img" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
@@ -38,7 +40,19 @@ $imagen = $pelicula->imagen ?? '';
                 <p class="parrafo"><?php echo ($descripcion)  ?></p>
                 <!-- <a class="peliculas__article__button" href="cesta.php?peliculaId=<?php echo $peliculaId ?> ">Comprar</a> -->
             </article>
-            <a href="./panel/login.php">¿Qieres comentar registrate?</a>
+        </section>
+
+        <section class="comentarios">
+            <?php if ($userLogged) { ?>
+                <form method="post">
+                    <textarea name="comentario" class="comentario" placeholder="comentar la pelicula <?php echo $nombre ?> "></textarea>
+                    <button type="submit">Enviar comentario</button>
+                </form>
+            <?php  } else { ?>
+                <a href="./panel/login.php">¿Qieres comentar registrate?</a>
+            <?php } ?>
+
+        </section>
     </main>
     <?php include_once '../resources/footer.php' ?>
 

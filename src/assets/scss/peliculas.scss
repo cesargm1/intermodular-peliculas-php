@@ -14,7 +14,8 @@ body {
 	grid-template-areas:
 		"filter main main"
 		"filter main main"
-		"paginate paginate paginate";
+		"filter paginate paginate"
+	;
 
 	grid-template-columns: 150px 1fr;
 

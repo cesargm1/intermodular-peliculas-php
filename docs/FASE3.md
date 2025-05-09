@@ -1,21 +1,24 @@
 # Fase 3
 
-## Comentarios
+## 🗣 Comentarios en productos
 
-1. Crear vista productos
-2. Iniciar sesion como usuario
-3. Enviar comentarios
-4. Administrador Editar comentarios
-5. Mostrar comentarios
+En cada página de producto aparecerá una sección de comentarios/opiniones al estilo de Amazon (parte inferior).
+Usuarios registrados podrán dejar comentarios a través de un formulario sencillo (campo de texto + botón de envío).
+Los usuarios no registrados sólo podrán visualizar los comentarios publicados.
+Cada comentario incluirá:
 
-## Lista de deseos
+- El nombre del usuario (no se podrá modificar)
+- La fecha de publicación
+- El texto del comentario
+- no se permitirán etiquetas HTML por motivos de seguridad
+- 🗣 Programa un Trigger y justifica su aplicación
 
-1. usuarios pueden marcar productos como favoritos
-2. cada producto tiene un botón tipo "❤️ Añadir a favoritos".
-3. crear una tabla favoritos que relaciona peliculas con usuarios
-4. contar el numero total de favoritos de cada producto junto a su card
+✅ Entrega del Proyecto La entrega del proyecto deberá incluir:
 
-## Control de Usuarios y Seguridad
+Aplicación completamente funcional, con todas las nuevas funcionalidades integradas correctamente.
 
-1. El administrador podria banear usuarios que inclumplan las normas
-2. Cada comentario deberá registrar la dirección IP del usuario
+Presentación final ante un tribunal compuesto por el profesorado de 1º y 2º de DAW:
+
+Presentación del proyecto en Microsoft PowerPoint
+Demostración funcional en directo
+Preguntas técnicas sobre la implementación, lógica de negocio y base de datos
