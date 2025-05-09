@@ -1,0 +1,19 @@
+@use "./variables";
+
+.paginate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 1em;
+    padding: 1em;
+    grid-area: paginate;
+}
+
+.next,
+.prev {
+    background-color: variables.$color-button-primary;
+    color: black;
+    padding: 0.5em;
+    text-decoration: none;
+}

@@ -58,21 +58,5 @@ body {
 .main .peliculas__article__button:active {
   background-color: #216f90;
 }
-.main .paginate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 1em;
-  padding: 1em;
-  grid-area: paginate;
-}
-.main .next,
-.main .prev {
-  background-color: #1c97c5;
-  color: black;
-  padding: 0.5em;
-  text-decoration: none;
-}
 
 /*# sourceMappingURL=peliculas.css.map */

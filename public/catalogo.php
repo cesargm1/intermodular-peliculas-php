@@ -19,10 +19,11 @@ $numPages = ObtenerPeliculas::numPages($perPage);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
-    <title>Document</title>
+    <title>Catalogo.php</title>
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/filters.css">
     <link rel="stylesheet" href="/css/peliculas.css">
+    <link rel="stylesheet" href="/css/paginate.css">
     <link rel="stylesheet" href="/css/footer.css">
 
 </head>
@@ -32,7 +33,6 @@ $numPages = ObtenerPeliculas::numPages($perPage);
     <main class="main">
         <?php include_once "../resources/filter.php" ?>
         <section class="peliculas">
-
 
             <?php foreach ($peliculas as $pelicula) {
                 $peliculaId = $pelicula['pelicula_id'];
@@ -49,6 +49,7 @@ $numPages = ObtenerPeliculas::numPages($perPage);
                     <p class="parrafo"><?php echo $descripcion ?></p>
 
                     <a class="peliculas__article__button" href="cesta.php?peliculaId=<?php echo $peliculaId ?> ">Comprar</a>
+                    <a class="peliculas__article__button" href="comentarios-peliculas.php?peliculaId=<?php echo $peliculaId ?> ">Comentar <?php echo $nombre ?></a>
                 </article>
 
             <?php } ?>

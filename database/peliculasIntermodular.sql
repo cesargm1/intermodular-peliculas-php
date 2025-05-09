@@ -65,5 +65,11 @@ CREATE TABLE lista_deseos (
     FOREIGN KEY (pelicula_id) REFERENCES peliculas (pelicula_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE comentarios (
+    id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nombre_usuario VARCHAR (100) NOT NULL UNIQUE,
+    fecha TIMESTAMP  DEFAULT CURRENT_TIMESTAMP ,
+    comentario VARCHAR(255)
+)
 
 ALTER TABLE peliculas ADD FULLTEXT(nombre);

@@ -19,8 +19,11 @@ class Connection
     {
         $username = $_ENV['DB_USERNAME'] ?? 'root';
         $pasword = $_ENV['DB_PASSWORD'] ?? '';
+        // descomentar soket si no lo utilizo
+        $soket = $_ENV['DB_SOCKET'] ?? '';
 
-        $conn = new mysqli(static::SERVER_NAME, $username, $pasword, static::DATABASE, static::PORT);
+        // descomentar soket si no lo utilizo
+        $conn = new mysqli(static::SERVER_NAME, $username, $pasword, static::DATABASE, static::PORT, $soket);
 
         if ($conn->connect_error) {
             throw new Exception("Connection failed: " . $conn->connect_error);

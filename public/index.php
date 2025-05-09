@@ -12,7 +12,7 @@ include_once '../vendor/autoload.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
-    <title>Document</title>
+    <title>pagina de inicio</title>
     <script src="/js/swiper-bundle.min.js"></script>
     <link
         rel="stylesheet"

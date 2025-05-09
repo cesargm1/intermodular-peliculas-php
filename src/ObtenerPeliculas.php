@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 class ObtenerPeliculas
 {
     public static function getAll(): array
