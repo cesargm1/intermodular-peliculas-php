@@ -67,7 +67,7 @@ CREATE TABLE lista_deseos (
 
 CREATE TABLE comentarios (
     id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nombre_usuario VARCHAR (100) NOT NULL UNIQUE,
+    nombre_usuario VARCHAR (100) NOT NULL,
     fecha TIMESTAMP  DEFAULT CURRENT_TIMESTAMP ,
     comentario VARCHAR(255)
 )

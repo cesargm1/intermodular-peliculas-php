@@ -39,11 +39,12 @@ class Auth
 
     public static function check(): bool
     {
-        session_start([
-            'name' => 'user_session',
-            'cookie_lifetime' => 1800
-
-        ]);
+        if (!isset($_SESSION)) {
+            session_start([
+                'name' => 'user_session',
+                'cookie_lifetime' => 1800
+            ]);
+        }
 
         $id = $_SESSION['id'] ?? false;
 
@@ -52,6 +53,25 @@ class Auth
         }
 
         return false;
+    }
+
+    public static function user(): null|array
+    {
+        if (!Auth::check()) {
+            return null;
+        }
+        $conn = Connection::conn();
+        $query = "SELECT usuario_id,nombre FROM usuarios where usuario_id = ? ";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('s', $_SESSION['id']);
+
+        $stmt->execute();
+        $stmt->bind_result($usuario_id, $nombre);
+        $stmt->fetch();
+        return [
+            'usuario_id' => $usuario_id,
+            'nombre' => $nombre,
+        ];
     }
 
 

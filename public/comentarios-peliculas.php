@@ -1,8 +1,12 @@
 <?php
 
+use App\Comentarios;
 use App\ObtenerPeliculas;
 
 use App\User\Auth;
+use App\Validator;
+use App\ValidatorException;
+
 
 include_once '../vendor/autoload.php';
 $peliculaId = (int) ($_GET['peliculaId'] ?? '');
@@ -12,8 +16,20 @@ $peliculaId =  $pelicula->peliculaId ?? '';
 $precio = $pelicula->precio ?? '';
 $descripcion = $pelicula->descripcion ?? '';
 $imagen = $pelicula->imagen ?? '';
-$texto = $_POST['comentario'] ?? '';
 $userLogged = Auth::check();
+
+
+$action = $_POST['action'] ?? null;
+
+if ($action == 'comment_add') {
+    $comentario = $_POST['comentario'] ?? '';
+    $validator = new Validator($comentario, "Rellena el comentario para continuar");
+    $validator->require();
+    $comentario = Comentarios::insertComment($comentario);
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -46,10 +62,13 @@ $userLogged = Auth::check();
             <?php if ($userLogged) { ?>
                 <form method="post">
                     <textarea name="comentario" class="comentario" placeholder="comentar la pelicula <?php echo $nombre ?> "></textarea>
-                    <button type="submit">Enviar comentario</button>
+                    <button type="submit" name="action" value="comment_add">Enviar comentario</button>
                 </form>
             <?php  } else { ?>
-                <a href="./panel/login.php">¿Qieres comentar registrate?</a>
+                <a href="/login">Quieres comentar registrate?</a>
+                <!-- <p name="usuario">comentario de <?php echo $usuario ?> </p> -->
+                <!-- <textarea name="comentario"></textarea> -->
+                <!-- <p name="fecha"><?php echo $fecha ?></p> -->
             <?php } ?>
 
         </section>
