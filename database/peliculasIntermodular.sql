@@ -72,4 +72,30 @@ CREATE TABLE comentarios (
     comentario VARCHAR(255)
 )
 
+CREATE TABLE peliculas_historico (
+pelicula_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nombre VARCHAR(100) NOT NULL, 
+precio DECIMAL (6,2) NOT NULL,
+ genero ENUM(
+        'accion', 
+        'aventura', 
+        'comedia', 
+        'drama', 
+        'terror', 
+        'ciencia ficcion', 
+        'fantasia', 
+        'suspenso', 
+        'romance', 
+        'musical', 
+        'documental', 
+        'animacion', 
+        'misterio', 
+        'historico', 
+        'crimen'
+    ),
+descripcion TEXT,
+fecha DATE,
+imagen MEDIUMBLOB
+);
+
 ALTER TABLE peliculas ADD FULLTEXT(nombre);

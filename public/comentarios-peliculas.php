@@ -41,7 +41,7 @@ if ($action == 'comment_add') {
     <title>Comentarios sobre <?php echo htmlspecialchars($nombre) ?></title>
     <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
     <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/peliculas.css">
+    <link rel="stylesheet" href="/css/comentarios-peliculas.css">
     <link rel="stylesheet" href="/css/footer.css">
 </head>
 
