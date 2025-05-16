@@ -19,8 +19,10 @@ class Comentarios
             return $stmt->execute();
         } else {
             echo "comentario no insertado";
-        }
+        };
 
         return true;
     }
+
+    public static function getAll() {}
 }

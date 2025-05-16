@@ -93,5 +93,10 @@ body {
   border: none;
   cursor: pointer;
 }
+.main__section .form .error {
+  color: #e40000;
+  background-color: #b8d7e9;
+  padding: 1em;
+}
 
 /*# sourceMappingURL=login.css.map */

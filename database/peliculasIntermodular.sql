@@ -67,9 +67,11 @@ CREATE TABLE lista_deseos (
 
 CREATE TABLE comentarios (
     id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    usuario_id BIGINT UNSIGNED NOT NULL UNIQUE,
     nombre_usuario VARCHAR (100) NOT NULL,
     fecha TIMESTAMP  DEFAULT CURRENT_TIMESTAMP ,
-    comentario VARCHAR(255)
+    comentario VARCHAR(255),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id) ON DELETE CASCADE ON UPDATE CASCADE
 )
 
 CREATE TABLE peliculas_historico (

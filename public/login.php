@@ -1,7 +1,7 @@
 <?php
-include_once '../../vendor/autoload.php';
+include_once '../vendor/autoload.php';
 
-use App\User\Auth;
+use App\Admin\Auth;
 
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';
@@ -43,7 +43,7 @@ if ($email) {
                         </div>
 
 
-                        <input class="input" name="email" type="text" required placeholder="Introduce tu email">
+                        <input autofocus class="input" name="email" type="text" required placeholder="Introduce tu email">
                     </label>
                 </div>
 

@@ -43,7 +43,7 @@ if ($email) {
                         </div>
 
 
-                        <input class="input" name="email" type="text" required placeholder="Introduce tu email">
+                        <input autofocus class="input" name="email" type="text" required placeholder="Introduce tu email">
                     </label>
                 </div>
 
@@ -59,7 +59,7 @@ if ($email) {
 
                 </div>
                 <button class="button" type="submit">Iniciar sesion</button>
-                <a href="registro.php">no tienes cuenta crea una</a>
+                <a href="/registro.php">no tienes cuenta crea una</a>
                 <?php
                 if ($messageError) {
                 ?>
