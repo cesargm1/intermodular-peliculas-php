@@ -1,7 +1,7 @@
 <?php
 include_once '../vendor/autoload.php';
 
-use App\Admin\Auth;
+use App\User\Auth;
 
 $email = $_POST['email'] ?? '';
 $password = $_POST['password'] ?? '';

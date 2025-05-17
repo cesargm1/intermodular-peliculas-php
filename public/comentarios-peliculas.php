@@ -2,6 +2,7 @@
 
 use App\Comentarios;
 use App\ListarComentarios;
+use App\ListarUsuarios;
 use App\ObtenerPeliculas;
 
 use App\User\Auth;
@@ -12,11 +13,10 @@ include_once '../vendor/autoload.php';
 $peliculaId = (int) ($_GET['peliculaId'] ?? '');
 $pelicula = ObtenerPeliculas::get($peliculaId);
 $nombre = $pelicula->nombre ?? '';
-$peliculaId =  $pelicula->peliculaId ?? '';
 $precio = $pelicula->precio ?? '';
 $descripcion = $pelicula->descripcion ?? '';
 $imagen = $pelicula->imagen ?? '';
-$comentarios = ListarComentarios::getAll();
+$comentarios = ListarComentarios::get($peliculaId);
 $userLogged = Auth::check();
 
 
@@ -26,7 +26,7 @@ if ($action == 'comment_add') {
     $comentario = $_POST['comentario'] ?? '';
     $validator = new Validator($comentario, "Rellena el comentario para continuar");
     $validator->require();
-    $comentario = Comentarios::insertComment($comentario);
+    $comentario = Comentarios::insertComment($comentario, $peliculaId);
 }
 
 
@@ -63,8 +63,8 @@ if ($action == 'comment_add') {
             <?php if ($userLogged) { ?>
                 <form method="post">
                     <div class="container">
-                        <textarea name="comentario" rows="5" class="comentario" placeholder="comentar la pelicula <?php echo $nombre ?> "></textarea>
-
+                        <textarea name="comentario" rows="5" class="comentario" placeholder="comentar la pelicula <?php echo $nombre ?>"></textarea>
+                        <input name="peliculaid" type="hidden">
                         <button type="submit" name="action" value="comment_add" class="bookmarkBtn">
                             <span class="IconContainer">
                                 <svg fill="white" viewBox="0 0 512 512" height="1em">

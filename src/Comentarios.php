@@ -7,14 +7,15 @@ use App\User\Auth;
 
 class Comentarios
 {
-    public static function insertComment($comentario): bool
+    public static function insertComment($comentario, $peliculaId): bool
     {
         $conn = Connection::conn();
         if ($comentario) {
             $user = Auth::user();
-            $query = "INSERT INTO comentarios (nombre_usuario , fecha, comentario) VALUES (?, NOW(), ?)";
+            $query = "INSERT INTO comentarios (nombre_usuario , fecha, comentario, pelicula_id, usuario_id) VALUES (?, NOW(), ?, ?, ?)";
             $stmt = $conn->prepare($query);
-            $stmt->bind_param('ss', $user['nombre'], $comentario);
+            $stmt->bind_param('ssii', $user['nombre'], $comentario, $peliculaId, $user['usuario_id']);
+
 
             return $stmt->execute();
         } else {
