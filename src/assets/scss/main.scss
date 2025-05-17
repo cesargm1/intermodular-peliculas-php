@@ -1,6 +1,7 @@
 @use "_variables.scss";
 @use "header.scss";
 @use "footer.scss";
+@use "../../../vendor/twbs/bootstrap/scss/bootstrap.scss";
 
 * {
 	box-sizing: border-box;
