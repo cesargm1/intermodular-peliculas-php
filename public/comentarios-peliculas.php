@@ -27,6 +27,7 @@ if ($action == 'comment_add') {
     $validator = new Validator($comentario, "Rellena el comentario para continuar");
     $validator->require();
     $comentario = Comentarios::insertComment($comentario, $peliculaId);
+    $comentarioSeguro = htmlspecialchars($comentario, ENT_QUOTES, 'UTF-8');
 }
 
 ?>
@@ -49,17 +50,21 @@ if ($action == 'comment_add') {
     <?php include_once '../resources/header.php'; ?>
     <main class=" main container">
         <section class="peliculas p-2 w-100">
-            <article class="peliculas__article d-flex justify-content-center w-100">
-                <div class="card">
-                    <img class="peliculas__article__img card-img-top img-thumbnail" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-12 col-md-6 p-3">
+                        <img class="peliculas__article__img card-img-top img-thumbnai" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
+                    </div>
 
-                    <div class="card-body">
-                        <h1 class="card-title"><?php echo ($nombre) ?></h1>
-                        <span><?php echo ($precio) ?> €</span>
-                        <p class="card-text"><?php echo ($descripcion)  ?></p>
+                    <div class="col-12 col-md-6 d-flex align-items-center">
+                        <div class="card-body">
+                            <h1 class="card-title"><?php echo ($nombre) ?></h1>
+                            <span class="fs-3 text-primary"><?php echo ($precio) ?> €</span>
+                            <p class="card-text"><?php echo ($descripcion)  ?></p>
+                        </div>
                     </div>
                 </div>
-            </article>
+            </div>
         </section>
 
         <section class="comentarios p-2">
@@ -73,7 +78,9 @@ if ($action == 'comment_add') {
                     </section>
 
                     <input name="peliculaid" type="hidden">
-                    <button type="submit" class="btn btn-outline-primary m-2" value="comment_add">Enviar</button>
+                    <div class="w-100 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-outline-primary m-2" value="comment_add">Enviar</button>
+                    </div>
                 </form>
             <?php  } else { ?>
                 <a href="login.php">Quieres comentar registrate?</a>

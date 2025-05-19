@@ -10,7 +10,7 @@ CREATE USER 'peflix_guest'@'%' IDENTIFIED BY 'peflixGuest!';
 
 GRANT SELECT ,INSERT ON peliculasIntermodular.* TO 'peflix_user'@'%';
 GRANT SELECT ON peliculasIntermodular.* TO 'peflix_guest'@'%';
-GRANT ALL PRIVILEGES ON *.* TO 'peflix_admin'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES  ON peliculasIntermodular.* TO 'peflix_admin'@'localhost';
 
 
 -- quuotas
