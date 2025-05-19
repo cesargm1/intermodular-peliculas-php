@@ -82,8 +82,6 @@ include_once '../vendor/autoload.php';
             <div class="swiper-scrollbar"></div>
         </div>
 
-        <button class="btn btn-primary">Prueba Bootstrap</button>
-
         <h2>Peliculas mas economicas</h2>
 
         <div class="swiper">
