@@ -55,6 +55,11 @@ if ($email) {
 
 
                         <input class="input" name="password" type="password" required placeholder="introduce contraseña">
+
+                        <div class="icon__container">
+                            <img class="img__icon viewPasswords" src="/svg/login/eye.svg" alt="eye">
+                        </div>
+
                     </label>
 
                 </div>
@@ -71,5 +76,7 @@ if ($email) {
         </section>
     </main>
 </body>
+
+<script src="/js/viewPassword.js"></script>
 
 </html>

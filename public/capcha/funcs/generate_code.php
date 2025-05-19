@@ -28,18 +28,18 @@ $fontSize = 20;
 $_SESSION['code_verify'] = sha1($codeCapcha);
 
 if (!file_exists($font)) {
-    die('Error: No se encontró la fuente en');
+    die('Error: No se encontró la fuente');
 }
 
 $image = imagecreatetruecolor($width, $height);
 
 // aplicamos un color al texto color de fondo y un color secundario primer parametro segundo tercero 
 
-$colorText = imagecolorallocate($image, 0, 33, 71);
+$colorText = imagecolorallocate($image, 170, 150, 170);
 
-$colorSecunday = imagecolorallocate($image, 20, 40, 40);
+$colorSecunday = imagecolorallocate($image, 32, 20, 24);
 
-$badgroundImage = imagecolorallocate($image, 255, 255, 255);
+$badgroundImage = imagecolorallocate($image, 120, 125, 200);
 
 // creamos las lineas 
 

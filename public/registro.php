@@ -3,7 +3,6 @@ $nombre = $_POST['nombre'] ?? '';
 $correo = $_POST['correo'] ?? '';
 $direccion = $_POST['direccion'] ?? '';
 $telefono = $_POST['telefono'] ?? '';
-$rol = $_POST['rol'] ?? '';
 ?>
 
 
@@ -78,7 +77,11 @@ $rol = $_POST['rol'] ?? '';
                             <img class="img__icon" src="/svg/login/password.svg" alt="icono">
                         </div>
 
-                        <input class="input" name="password" type="password" required placeholder="introduce tu contraseña">
+                        <input class="input" name="password" type="password" id="password" required placeholder="introduce tu contraseña">
+
+                        <div class="icon__container">
+                            <img class="img__icon viewPasswords" src="/svg/login/eye.svg" alt="eye">
+                        </div>
                     </label>
                 </div>
 
@@ -88,7 +91,11 @@ $rol = $_POST['rol'] ?? '';
                             <img class="img__icon" src="/svg/login/password.svg" alt="icono">
                         </div>
 
-                        <input class="input" name="password" type="password" required placeholder="Vuelve a introducir tu contraseña">
+                        <input class="input password" name="password" type="password" required placeholder="Vuelve a introducir tu contraseña">
+
+                        <div class="icon__container">
+                            <img class="img__icon viewPasswords" src="/svg/login/eye.svg" alt="eye">
+                        </div>
                     </label>
                 </div>
 
@@ -99,9 +106,6 @@ $rol = $_POST['rol'] ?? '';
                 </div>
                 <img class="img__capcha" src="../capcha/funcs/generate_code.php" alt="capcha" />
 
-
-
-
                 <button class="button-generate-capcha" type="button">
                     + genera nuevo codigo
                 </button>
@@ -111,6 +115,8 @@ $rol = $_POST['rol'] ?? '';
         </section>
     </main>
 </body>
+
+<script src="js/viewPassword.js"></script>
 
 <script>
     // por js selecionamos la imagen del capcha y tambien el boton de generar nuevo
