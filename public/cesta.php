@@ -1,10 +1,14 @@
 <?php
 
 use App\ObtenerPeliculas;
-
 use App\Carrito;
 
 include_once '../vendor/autoload.php';
+
+use App\User\Auth;
+
+$user = Auth::user();
+$nombreUsuario = $user['nombre'] ?? 'Invitado';
 
 $peliculaId = $_GET['peliculaId'] ?? null;
 $accion = $_GET['accion'] ?? 'agregar';
@@ -109,6 +113,7 @@ $peliculas = $carrito->peliculas();
 
                                         <?php  } ?>
                                         </section>
+                                        <hr>
                                         <p>Total a pagar: <?php echo $total ?>€ </p>
                                     </section>
                                     <br>

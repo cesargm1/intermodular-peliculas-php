@@ -37,7 +37,7 @@ class Auth
         return true;
     }
 
-    public function check(): bool
+    public static function check(): bool
     {
         session_start([
             'name' => 'panel_session',

@@ -2,7 +2,6 @@
 
 use App\Comentarios;
 use App\ListarComentarios;
-use App\ListarUsuarios;
 use App\ObtenerPeliculas;
 use App\User\Auth;
 use App\Validator;

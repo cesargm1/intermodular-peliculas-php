@@ -3,7 +3,6 @@
 namespace App;
 
 use App\User\Auth;
-// use Exception;
 
 class Comentarios
 {
@@ -24,6 +23,4 @@ class Comentarios
 
         return true;
     }
-
-    public static function getAll() {}
 }

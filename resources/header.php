@@ -1,3 +1,10 @@
+<?php
+
+use App\User\Auth;
+
+$user = Auth::user();
+$nombreUsuario = $user['nombre'] ?? 'Invitado';
+?>
 <header class="header">
     <nav>
         <ul>
@@ -36,10 +43,19 @@
 
             <li>
                 <div class="container__icon">
-                    <a href="/panel/usuarios.php"><img src="/svg/login/user.svg" alt="usuarios" title="administrar usuarios" class="icon"></a>
+                    <?php if (!$nombreUsuario === 'nombre') { ?>
+                        <a href="/panel/usuarios.php"><img src="/svg/nav/logout.svg" alt="usuarios" title="logout" class="icon"></a>
+                    <?php } else { ?>
+                        <a href="/panel/usuarios.php"><img src="/svg/login/user.svg" alt="usuarios" title="logearse" class="icon"></a>
+                    <?php } ?>
                 </div>
             </li>
 
+            <li>
+                <div class="container__icon">
+                    <span>Bienvenido <?php echo $nombreUsuario ?></span>
+                </div>
+            </li>
         </ul>
     </nav>
 </header>
