@@ -113,7 +113,7 @@ $peliculas = $carrito->peliculas();
                                     </section>
                                     <br>
                                     <br>
-                                    <a class="buy" href="/panel/login.php">Confirmar compra</a>
+                                    <a class="buy" href="comprar.php">Confirmar compra</a>
                             </div>
                             <div class="modal-footer">
                             </div>

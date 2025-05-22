@@ -1,10 +1,47 @@
 <?php
-$nombre = $_POST['nombre'] ?? '';
-$correo = $_POST['correo'] ?? '';
-$direccion = $_POST['direccion'] ?? '';
-$telefono = $_POST['telefono'] ?? '';
-?>
+include_once '../vendor/autoload.php';
 
+use App\CrearUsuario;
+use App\Validator;
+use App\ValidatorException;
+
+session_start();
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = $_POST['nombre'] ?? '';
+    $correo = $_POST['correo'] ?? '';
+    $direccion = $_POST['direccion'] ?? '';
+    $telefono = $_POST['telefono'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $capcha = $_POST["capcha"] ?? '';
+    $codeVerify = $_SESSION['code_verify'] ?? '';
+
+    // 1. Validar CAPTCHA
+    if ($capcha === '') {
+        die("Por favor, ingresa el código CAPTCHA.");
+    }
+
+    if (sha1($capcha) !== $codeVerify) {
+        $_SESSION['code_verify'] = '';
+        die("El código de verificación es incorrecto.");
+    }
+
+    // 2. Validar los campos
+    try {
+        (new Validator($nombre, 'Nombre'))->require();
+        (new Validator($correo, 'Correo'))->require()->email();
+        (new Validator($direccion, 'Dirección'))->require();
+        (new Validator($telefono, 'Teléfono'))->require();
+        (new Validator($password, 'Contraseña'))->require();
+    } catch (ValidatorException $e) {
+        die($e->getMessage());
+    }
+
+    CrearUsuario::crear($nombre, $correo, $direccion, $telefono, $password);
+    header("Location: login.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +59,7 @@ $telefono = $_POST['telefono'] ?? '';
 <body>
     <main class="main">
         <section class="main__section">
-            <form class="form" action="/comprar.php" method="post">
+            <form class="form" method="post">
                 <h1 class="h1">Registro de usuarios</h1>
                 <div class="input__container">
                     <label>
@@ -30,8 +67,7 @@ $telefono = $_POST['telefono'] ?? '';
                             <img class="img__icon" src="/svg/login/user.svg" alt="icono">
                         </div>
 
-
-                        <input class="input" name="nombre" type="text" required placeholder="Introduce tu nombre de usuario">
+                        <input autofocus class="input" name="nombre" type="text" required placeholder="Introduce tu nombre de usuario">
                     </label>
                 </div>
 
@@ -77,7 +113,7 @@ $telefono = $_POST['telefono'] ?? '';
                             <img class="img__icon" src="/svg/login/password.svg" alt="icono">
                         </div>
 
-                        <input class="input" name="password" type="password" id="password" required placeholder="introduce tu contraseña">
+                        <input class="input" name="password" type="password" id="key1" required placeholder="introduce tu contraseña">
 
                         <div class="icon__container">
                             <img class="img__icon viewPasswords" src="/svg/login/eye.svg" alt="eye">
@@ -91,7 +127,7 @@ $telefono = $_POST['telefono'] ?? '';
                             <img class="img__icon" src="/svg/login/password.svg" alt="icono">
                         </div>
 
-                        <input class="input password" name="password" type="password" required placeholder="Vuelve a introducir tu contraseña">
+                        <input class="input password" name="password" id="key2" type="password" required placeholder="Vuelve a introducir tu contraseña">
 
                         <div class="icon__container">
                             <img class="img__icon viewPasswords" src="/svg/login/eye.svg" alt="eye">
@@ -109,7 +145,7 @@ $telefono = $_POST['telefono'] ?? '';
                 <button class="button-generate-capcha" type="button">
                     + genera nuevo codigo
                 </button>
-                <button class="button" type="submit">Crear cuenta</button>
+                <button class="button" type="submit" onclick="return checkPassword(event)">Crear cuenta</button>
                 <a href="login.php">Ya tienes cuenta ? Inicia sesion</a>
             </form>
         </section>
@@ -117,6 +153,7 @@ $telefono = $_POST['telefono'] ?? '';
 </body>
 
 <script src="js/viewPassword.js"></script>
+<script src="js/checkPassword.js"></script>
 
 <script>
     // por js selecionamos la imagen del capcha y tambien el boton de generar nuevo

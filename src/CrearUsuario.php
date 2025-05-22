@@ -4,7 +4,7 @@ namespace App;
 
 class CrearUsuario
 {
-    public static function crear($nombre, $correo, $direccion, $telefono, $password, $rol): int
+    public static function crear($nombre, $correo, $direccion, $telefono, $password, $rol = 'usuario'): int
     {
         $conn = Connection::conn();
         $query = "INSERT INTO usuarios (nombre, email, direccion_envio, telefono, `password`,rol) VALUES (?,?,?,?,?,?)";

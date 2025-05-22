@@ -4,7 +4,6 @@ use App\Comentarios;
 use App\ListarComentarios;
 use App\ListarUsuarios;
 use App\ObtenerPeliculas;
-
 use App\User\Auth;
 use App\Validator;
 
@@ -79,7 +78,7 @@ if ($action == 'comment_add') {
 
                     <input name="peliculaid" type="hidden">
                     <div class="w-100 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-outline-primary m-2" value="comment_add">Enviar</button>
+                        <button type="submit" name="action" class="btn btn-outline-primary m-2" value="comment_add">Enviar</button>
                     </div>
                 </form>
             <?php  } else { ?>

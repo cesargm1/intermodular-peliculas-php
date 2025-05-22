@@ -1,4 +1,5 @@
--- MySQL dump 10.13  Distrib 8.0.40, for macos14.7 (x86_64)
+Terminal close -- exit!
+trib 8.0.40, for macos14.7 (x86_64)
 --
 -- Host: localhost    Database: peliculasIntermodular
 -- ------------------------------------------------------
