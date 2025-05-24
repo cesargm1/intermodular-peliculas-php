@@ -44,13 +44,13 @@ $nombreUsuario = $user['nombre'] ?? 'Invitado';
             <li>
                 <div class="container__icon">
                     <?php if (!$nombreUsuario === 'nombre') { ?>
-                        <a href="/panel/usuarios.php"><img src="/svg/nav/logout.svg" alt="usuarios" title="logout" class="icon"></a>
+                        <a href="/index.php"><img src="/svg/nav/logOut.svg" alt="usuarios" title="logout" class="icon"></a>
                     <?php } else { ?>
-                        <a href="/panel/usuarios.php"><img src="/svg/login/user.svg" alt="usuarios" title="logearse" class="icon"></a>
+                        <a href="/login.php"><img src="/svg/login/user.svg" alt="usuarios" title="logearse" class="icon"></a>
                     <?php } ?>
                 </div>
-            </li>
 
+            </li>
             <li>
                 <div class="container__icon">
                     <span>Bienvenido <?php echo $nombreUsuario ?></span>

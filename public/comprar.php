@@ -3,22 +3,37 @@
 use App\Carrito;
 use App\CrearUsuario;
 use App\Session;
+use App\Validator;
 
 include_once '../vendor/autoload.php';
 
-$nombre = $_POST['nombre'] ?? '';
-$correo = $_POST['correo'] ?? '';
-$direccion = $_POST['direccion'] ?? '';
-$telefono = $_POST['telefono'] ?? '';
-$password = $_POST["password"] ?? '';
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+    header('Location: /index.php');
+    exit();
+}
+
+(new Validator($nombre, 'Nombre'))->require();
+(new Validator($correo, 'Correo'))->require()->email();
+(new Validator($direccion, 'Dirección'))->require();
+(new Validator($telefono, 'Teléfono'))->require();
+(new Validator($password, 'Contraseña'))->require();
+
+session_start();
+$nombre = $_SESSION['nombre'] ?? '';
+$correo = $_SESSION['correo'] ?? '';
+$direccion = $_SESSION['direccion'] ?? '';
+$telefono = $_SESSION['telefono'] ?? '';
+$password = $_SESSION["password"] ?? '';
 
 
 
 $usuarioId = CrearUsuario::crear($nombre, $correo, $direccion, $telefono, $password);
+
 $carrito = new Carrito();
 $carrito->asociarUsuario($usuarioId);
 $session = new Session();
 $session->regenerateId();
+
 ?>
 
 
@@ -56,6 +71,7 @@ $session->regenerateId();
         </p>
         <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
         <p><strong>¡Que disfrutes de tus películas!</strong></p>
+        <a href="/index.php">Volver a la pagina de inicio</a>
     </div>
 </body>
 

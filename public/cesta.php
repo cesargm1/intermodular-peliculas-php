@@ -56,7 +56,9 @@ $peliculas = $carrito->peliculas();
                 $imagen = $pelicula['imagen'];
                 $total = $total + $cantidad * $precio;
             ?>
+                <form method="post">
 
+                </form>
                 <section class="peliculas">
                     <img class="img cart-text" title="<?php echo $nombre ?>" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
                     <p class="nombre cart-text"><?php echo $nombre ?></p>
@@ -118,7 +120,14 @@ $peliculas = $carrito->peliculas();
                                     </section>
                                     <br>
                                     <br>
-                                    <a class="buy" href="comprar.php">Confirmar compra</a>
+
+                                    <?php if (Auth::user()) { ?>
+                                        <a class="buy" href="comprar.php" type="submit">Confirmar compra</a>
+
+                                    <?php } else { ?>
+                                        <a href="registro.php">¿No tienes cuenta creala?</a>
+                                        <a href="/login.php">¿Tienes cuenta inicia sesion?</a>
+                                    <?php }  ?>
                             </div>
                             <div class="modal-footer">
                             </div>
@@ -127,7 +136,6 @@ $peliculas = $carrito->peliculas();
 
                 <?php } ?>
             </section>
-
         </div>
     </main>
     <?php include_once '../resources/footer.php' ?>
