@@ -12,18 +12,17 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     exit();
 }
 
+$nombre = $_POST['nombre'] ?? '';
+$correo = $_POST['correo'] ?? '';
+$direccion = $_POST['direccion'] ?? '';
+$telefono = $_POST['telefono'] ?? '';
+$password = $_POST['password'] ?? '';
+
 (new Validator($nombre, 'Nombre'))->require();
 (new Validator($correo, 'Correo'))->require()->email();
 (new Validator($direccion, 'Dirección'))->require();
 (new Validator($telefono, 'Teléfono'))->require();
 (new Validator($password, 'Contraseña'))->require();
-
-session_start();
-$nombre = $_SESSION['nombre'] ?? '';
-$correo = $_SESSION['correo'] ?? '';
-$direccion = $_SESSION['direccion'] ?? '';
-$telefono = $_SESSION['telefono'] ?? '';
-$password = $_SESSION["password"] ?? '';
 
 
 

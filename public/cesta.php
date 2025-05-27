@@ -3,6 +3,7 @@
 use App\ObtenerPeliculas;
 use App\Carrito;
 
+
 include_once '../vendor/autoload.php';
 
 use App\User\Auth;
@@ -56,9 +57,6 @@ $peliculas = $carrito->peliculas();
                 $imagen = $pelicula['imagen'];
                 $total = $total + $cantidad * $precio;
             ?>
-                <form method="post">
-
-                </form>
                 <section class="peliculas">
                     <img class="img cart-text" title="<?php echo $nombre ?>" src="data:image/jpeg;base64,<?php echo $imagen ?>" alt="<?php echo $nombre ?>">
                     <p class="nombre cart-text"><?php echo $nombre ?></p>
@@ -122,7 +120,23 @@ $peliculas = $carrito->peliculas();
                                     <br>
 
                                     <?php if (Auth::user()) { ?>
-                                        <a class="buy" href="comprar.php" type="submit">Confirmar compra</a>
+                                        <?php
+
+                                        $nombre = $_SESSION['nombre'] ?? '';
+                                        $correo = $_SESSION['correo'] ?? '';
+                                        $direccion = $_SESSION['direccion'] ?? '';
+                                        $telefono = $_SESSION['telefono'] ?? '';
+                                        $password = $_SESSION["password"] ?? '';
+
+                                        ?>
+                                        <form action="comprar.php" method="post">
+                                            <input type="hidden" name="nombre" value="<?php echo $nombre; ?>">
+                                            <input type="hidden" name="correo" value="<?php echo $correo; ?>">
+                                            <input type="hidden" name="direccion" value="<?php $direccion; ?>">
+                                            <input type="hidden" name="telefono" value="<?php echo $telefono; ?>">
+                                            <input type="hidden" name="password" value="<?php echo $password; ?>">
+                                            <button class="buy" type="submit">Confirmar compra</button>
+                                        </form>
 
                                     <?php } else { ?>
                                         <a href="registro.php">¿No tienes cuenta creala?</a>
