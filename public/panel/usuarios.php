@@ -33,6 +33,7 @@ $usuarios = ListarUsuarios::getAll();
 <body>
     <h1>Listado de usuarios</h1>
     <table>
+        <a href="registro.php">Crear usuario</a>
         <tr>
             <th>#</th>
             <th>nombre</th>

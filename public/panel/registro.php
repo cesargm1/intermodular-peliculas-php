@@ -1,11 +1,48 @@
 <?php
-$nombre = $_POST['nombre'] ?? '';
-$correo = $_POST['correo'] ?? '';
-$direccion = $_POST['direccion'] ?? '';
-$telefono = $_POST['telefono'] ?? '';
-$rol = $_POST['rol'] ?? '';
-?>
+include_once '../../vendor/autoload.php';
 
+use App\CrearUsuario;
+use App\Validator;
+use App\ValidatorException;
+
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = $_POST['nombre'] ?? '';
+    $correo = $_POST['correo'] ?? '';
+    $direccion = $_POST['direccion'] ?? '';
+    $telefono = $_POST['telefono'] ?? '';
+    $password = $_POST['password'] ?? '';
+    $rol = $_POST['rol'] ?? 'usuario';
+    $capcha = $_POST["capcha"] ?? '';
+    $codeVerify = $_SESSION['code_verify'] ?? '';
+
+    // 1. Validar CAPTCHA
+    if ($capcha === '') {
+        die("Por favor, ingresa el código CAPTCHA.");
+    }
+
+    if (sha1($capcha) !== $codeVerify) {
+        $_SESSION['code_verify'] = '';
+        die("El código de verificación es incorrecto.");
+    }
+
+    // 2. Validar los campos
+    try {
+        (new Validator($nombre, 'Nombre'))->require();
+        (new Validator($correo, 'Correo'))->require()->email();
+        (new Validator($direccion, 'Dirección'))->require();
+        (new Validator($telefono, 'Teléfono'))->require();
+        (new Validator($password, 'Contraseña'))->require();
+        (new Validator($rol, 'rol'))->require();
+    } catch (ValidatorException $e) {
+        die($e->getMessage());
+    }
+
+    CrearUsuario::crear($nombre, $correo, $direccion, $telefono, $password, $rol);
+    header("Location: login.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,18 +51,17 @@ $rol = $_POST['rol'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="svg/logo.svg" />
-    <title>Formulario de registro</title>
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <title>Formulario de registro panel</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
-    <?php include_once '../../resources/header.php' ?>
     <main class="main">
         <section class="main__section">
-            <form class="form" action="/comprar.php" method="post">
-                <h1 class="h1">Registro de usuarios</h1>
+            <form class="form" method="post">
+                <h1 class="h1">Registro de usuarios por el panel</h1>
                 <div class="input__container">
                     <label>
                         <div class="icon__container">
@@ -79,7 +115,11 @@ $rol = $_POST['rol'] ?? '';
                             <img class="img__icon" src="/svg/login/password.svg" alt="icono">
                         </div>
 
-                        <input class="input" name="password" type="password" required placeholder="introduce tu contraseña">
+                        <input class="input password" name="password" id="key1" type="password" required placeholder="Vuelve a introducir tu contraseña">
+
+                        <div class="icon__container">
+                            <img class="img__icon viewPasswords" src="/svg/login/eye.svg" alt="eye">
+                        </div>
                     </label>
                 </div>
 
@@ -89,7 +129,11 @@ $rol = $_POST['rol'] ?? '';
                             <img class="img__icon" src="/svg/login/password.svg" alt="icono">
                         </div>
 
-                        <input class="input" name="password" type="password" required placeholder="Vuelve a introducir tu contraseña">
+                        <input class="input password" name="password" id="key2" type="password" required placeholder="Vuelve a introducir tu contraseña">
+
+                        <div class="icon__container">
+                            <img class="img__icon viewPasswords" src="/svg/login/eye.svg" alt="eye">
+                        </div>
                     </label>
                 </div>
 
@@ -99,9 +143,6 @@ $rol = $_POST['rol'] ?? '';
                     </label>
                 </div>
                 <img class="img__capcha" src="../capcha/funcs/generate_code.php" alt="capcha" />
-
-
-
 
                 <button class="button-generate-capcha" type="button">
                     + genera nuevo codigo
@@ -117,14 +158,14 @@ $rol = $_POST['rol'] ?? '';
                     </label><br>
                 </label>
 
-                <button class="button" type="submit">Crear cuenta</button>
+                <button class="button" type="submit" onclick="return checkPassword(event)">Crear cuenta</button>
                 <a href="login.php">Ya tienes cuenta ? Inicia sesion</a>
             </form>
         </section>
     </main>
-    <?php include_once '../../resources/footer.php' ?>
 </body>
-
+<script src="../js/viewPassword.js"></script>
+<script src="../js/checkPassword.js"></script>
 <script>
     // por js selecionamos la imagen del capcha y tambien el boton de generar nuevo
     const imgCodes = document.querySelector(".img__capcha");
