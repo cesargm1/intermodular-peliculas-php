@@ -61,16 +61,19 @@ class Auth
             return null;
         }
         $conn = Connection::conn();
-        $query = "SELECT usuario_id,nombre FROM usuarios where usuario_id = ? ";
+        $query = "SELECT usuario_id, nombre, email, direccion_envio, telefono FROM usuarios where usuario_id = ? ";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param('s', $_SESSION['id']);
+        $stmt->bind_param('i', $_SESSION['id']);
 
         $stmt->execute();
-        $stmt->bind_result($usuario_id, $nombre);
+        $stmt->bind_result($usuario_id, $nombre, $email, $direccion_envio, $telefono);
         $stmt->fetch();
         return [
             'usuario_id' => $usuario_id,
             'nombre' => $nombre,
+            'email' => $email,
+            'direccion_envio' => $direccion_envio,
+            'telefono' => $telefono
         ];
     }
 
