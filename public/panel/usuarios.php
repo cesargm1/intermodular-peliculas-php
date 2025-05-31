@@ -41,7 +41,7 @@ $usuarios = ListarUsuarios::getAll();
             <th>dirrecion envio</th>
             <th>telefono</th>
             <th>rol</th>
-            <th></th>
+            <th>accion</th>
         </tr>
 
         <?php foreach ($usuarios as $usuario) { ?>
@@ -55,7 +55,8 @@ $usuarios = ListarUsuarios::getAll();
 
 
                 <td>
-                    <button>Editar</button>
+                    <a href="/panel/editar-usuario.php?usuario_id=<?php echo $usuario['usuario_id'] ?>">editar usuario</a>
+
                     <form method="post">
                         <input type="hidden" name="usuario_id" value="<?php echo $usuario['usuario_id'] ?>">
                         <input type="submit" name="action" value="eliminar">

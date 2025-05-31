@@ -54,7 +54,7 @@ $peliculas = ObtenerPeliculas::searchPeliculas($buscador, $generos);
                         <span><?php echo $precio ?> €</span>
                         <p class="parrafo"><?php echo $descripcion ?></p>
                         <p><?php echo $genero ?></p>
-
+                        <a class="peliculas__article__button" href="comentarios-peliculas.php?peliculaId=<?php echo $peliculaId ?> ">Comentar <?php echo $nombre ?></a>
                         <a class="peliculas__article__button" href="cesta.php?peliculaId=<?php echo $peliculaId ?> ">Comprar</a>
                     </article>
 

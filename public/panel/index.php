@@ -40,7 +40,7 @@ $peliculas = ObtenerPeliculas::getAll();
 			<th>nombre</th>
 			<th>precio</th>
 			<th>genero</th>
-			<th></th>
+			<th>accion</th>
 		</tr>
 
 		<?php foreach ($peliculas as $pelicula) { ?>
